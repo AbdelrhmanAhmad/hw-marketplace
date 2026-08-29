@@ -18,16 +18,20 @@ return new class extends Migration
         DB::unprepared(<<<'SQL'
             CREATE TRIGGER prevent_audit_logs_update
             BEFORE UPDATE ON audit_logs
+            FOR EACH ROW
             BEGIN
-                SELECT RAISE(ABORT, 'audit_logs is append-only — UPDATE rejected at database level (AD-001)');
+                SIGNAL SQLSTATE '45000'
+                    SET MESSAGE_TEXT = 'audit_logs is append-only — UPDATE rejected at database level (AD-001)';
             END;
         SQL);
 
         DB::unprepared(<<<'SQL'
             CREATE TRIGGER prevent_audit_logs_delete
             BEFORE DELETE ON audit_logs
+            FOR EACH ROW
             BEGIN
-                SELECT RAISE(ABORT, 'audit_logs is append-only — DELETE rejected at database level (AD-001)');
+                SIGNAL SQLSTATE '45000'
+                    SET MESSAGE_TEXT = 'audit_logs is append-only — DELETE rejected at database level (AD-001)';
             END;
         SQL);
     }

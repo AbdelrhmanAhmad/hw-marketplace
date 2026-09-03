@@ -53,10 +53,23 @@ class CatalogRepositoryTest extends TestCase
     {
         $this->seed(MarketplaceCatalogSeeder::class);
 
+        // "articles" يبقى Coming Soon حقيقيًا (Phase 9) — لا Backend خلفه.
+        $articles = (new DatabaseMarketplaceRepository)->find('articles');
+
+        $this->assertSame('soon', $articles['status']);
+        $this->assertArrayNotHasKey('href', $articles);
+    }
+
+    /** Final Execution Sprint (Phase 4) — إفلاس تك انتقل من Catalog Item لتطبيق حقيقي. */
+    public function test_database_repository_marks_bankruptcy_tech_as_available_with_href(): void
+    {
+        $this->seed(MarketplaceCatalogSeeder::class);
+
         $bankruptcyTech = (new DatabaseMarketplaceRepository)->find('bankruptcy-tech');
 
-        $this->assertSame('soon', $bankruptcyTech['status']);
-        $this->assertArrayNotHasKey('href', $bankruptcyTech);
-        $this->assertFalse($bankruptcyTech['free']);
+        $this->assertSame('available', $bankruptcyTech['status']);
+        $this->assertArrayHasKey('href', $bankruptcyTech);
+        $this->assertTrue($bankruptcyTech['free']);
+        $this->assertStringContainsString('bankruptcy-tech', $bankruptcyTech['href']);
     }
 }

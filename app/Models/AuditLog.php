@@ -9,10 +9,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use LogicException;
 
 /**
- * AD-001 — Append-only بالتصميم، لا اتفاق إجرائي فقط. لا UI، لا بحث،
- * لا Analytics، لا Export — لا شيء أبعد من الكتابة والقراءة اليدوية.
- * يُكتَب من App\Services\SubscriptionService، OrganizationSubscriptionService،
- * وSeatService — الثلاثة فقط (مؤكَّد بـgrep شامل).
+ * AD-001 — Append-only بالتصميم، لا اتفاق إجرائي فقط. لا بحث، لا Analytics،
+ * لا Export — القراءة اليوم فقط عبر استعلامات مباشرة (Timeline بإفلاس تك أول
+ * استهلاك UI حقيقي له). يُكتَب من كل Domain Service حساس (Subscription/
+ * Organization/Membership/Seat/BankruptcyCase) — كل كتابة جديدة يجب تمر عبر
+ * تابع `log()` خاص بخدمتها، لا استدعاء `AuditLog::create()` مباشر من
+ * Controller/Filament إطلاقًا.
  *
  * الحماية بثلاث طبقات مستقلة (راجع docs/audit-log-integrity-hardening.md):
  * (١) Instance update()/delete() أدناه، (٢) AppendOnlyBuilder لأي Mass

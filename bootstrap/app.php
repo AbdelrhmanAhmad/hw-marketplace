@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\EnsureMarketplaceEntitlement;
 use App\Http\Middleware\ValidateActiveOrganizationContext;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -15,6 +16,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         // Phase 2A — راجع docs/phase-2a-implementation-specification.md.
         $middleware->appendToGroup('web', ValidateActiveOrganizationContext::class);
+
+        // Final Execution Sprint — حاجز Entitlement عام لأي تطبيق Marketplace حقيقي.
+        $middleware->alias(['marketplace.entitled' => EnsureMarketplaceEntitlement::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

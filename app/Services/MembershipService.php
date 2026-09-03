@@ -89,6 +89,7 @@ class MembershipService
             Organization::whereKey($membership->organization_id)->lockForUpdate()->firstOrFail();
 
             $locked = Membership::whereKey($membership->id)->lockForUpdate()->firstOrFail();
+            $previousRole = $locked->role;
 
             $isPromotionToOwner = $locked->role !== MembershipRole::Owner && $newRole === MembershipRole::Owner;
 
@@ -108,6 +109,16 @@ class MembershipService
                     'metadata' => ['target_user_id' => $locked->user_id, 'via' => 'change_role'],
                 ]);
             }
+
+            // AD-016 — كل تغيير Role (لا فقط الترقية لـOwner) أصبح مُدقَّقًا الآن.
+            AuditLog::create([
+                'organization_id' => $locked->organization_id,
+                'actor_user_id' => $actor->id,
+                'event' => AuditEvent::MembershipRoleChanged->value,
+                'subject_type' => Membership::class,
+                'subject_id' => $locked->id,
+                'metadata' => ['target_user_id' => $locked->user_id, 'from' => $previousRole->value, 'to' => $newRole->value],
+            ]);
         });
     }
 
@@ -115,7 +126,7 @@ class MembershipService
     {
         Gate::forUser($actor)->authorize('manageMembers', $membership->organization);
 
-        DB::transaction(function () use ($membership) {
+        DB::transaction(function () use ($actor, $membership) {
             Organization::whereKey($membership->organization_id)->lockForUpdate()->firstOrFail();
 
             $locked = Membership::whereKey($membership->id)->lockForUpdate()->first();
@@ -127,6 +138,16 @@ class MembershipService
             if ($locked->role === MembershipRole::Owner) {
                 $this->assertNotLastOwner($locked->organization_id);
             }
+
+            // AD-016 — يُسجَّل قبل الحذف (السجل يبقى بلا حاجة FK على صف مُزال).
+            AuditLog::create([
+                'organization_id' => $locked->organization_id,
+                'actor_user_id' => $actor->id,
+                'event' => AuditEvent::MembershipRemoved->value,
+                'subject_type' => Membership::class,
+                'subject_id' => $locked->id,
+                'metadata' => ['target_user_id' => $locked->user_id, 'role' => $locked->role->value],
+            ]);
 
             $locked->delete();
         });
@@ -154,7 +175,7 @@ class MembershipService
         // Review #2) — راجع docs/ownership-transfer-security-hardening-design.md.
         $this->authorizeGrantingOwnership($actor, $from->organization);
 
-        DB::transaction(function () use ($from, $to, $demoteFromTo) {
+        DB::transaction(function () use ($actor, $from, $to, $demoteFromTo) {
             Organization::whereKey($from->organization_id)->lockForUpdate()->firstOrFail();
 
             $lockedFrom = Membership::whereKey($from->id)->lockForUpdate()->firstOrFail();
@@ -162,6 +183,21 @@ class MembershipService
 
             $lockedTo->update(['role' => MembershipRole::Owner]);
             $lockedFrom->update(['role' => $demoteFromTo]);
+
+            // AD-016 — نقل الملكية لم يكن مُدقَّقًا إطلاقًا من قبل، رغم كونه
+            // أخطر فعل بهذا الملف بأكمله.
+            AuditLog::create([
+                'organization_id' => $lockedFrom->organization_id,
+                'actor_user_id' => $actor->id,
+                'event' => AuditEvent::OwnershipTransferred->value,
+                'subject_type' => Membership::class,
+                'subject_id' => $lockedTo->id,
+                'metadata' => [
+                    'from_user_id' => $lockedFrom->user_id,
+                    'to_user_id' => $lockedTo->user_id,
+                    'from_new_role' => $demoteFromTo->value,
+                ],
+            ]);
         });
     }
 

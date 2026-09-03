@@ -11,7 +11,11 @@ use Tests\TestCase;
 
 /**
  * BR-011: MarketplaceCatalogRepository::find()/all() يرجّعان نفس Shape البيانات
- * بغض النظر عن التطبيق الفعّال. هذا الاختبار هو المحك الحقيقي قبل أي Cutover.
+ * بغض النظر عن التطبيق الفعّال. هذا الاختبار هو المحك الحقيقي قبل أي Cutover
+ * (مُنفَّذ ومُتحقَّق منه تاريخيًا). Final Execution Sprint — إفلاس تك تطبيق
+ * حقيقي الآن، يتجاوز عمدًا اللقطة القديمة المجمَّدة (`status`/`free`) —
+ * الأمر (`marketplace:catalog-parity-check`) يستثنيه صراحة (EVOLVED_ITEMS)،
+ * لا يُخفي الفارق، فقط لا يُصنِّفه عطلًا.
  */
 class CatalogParityTest extends TestCase
 {
@@ -45,21 +49,36 @@ class CatalogParityTest extends TestCase
         $static = (new StaticPlatformAppsRepository)->all()->keyBy('key');
         $database = (new DatabaseMarketplaceRepository)->all()->keyBy('key');
 
+        // إفلاس تك تجاوز اللقطة القديمة عمدًا (أصبح تطبيقًا حقيقيًا) —
+        // status/free/href تتغيّر بالتصميم له تحديدًا، لا تُقارَن هنا.
+        $evolvedItems = ['bankruptcy-tech'];
+
         foreach ($static as $key => $oldApp) {
             $newApp = $database->get($key);
+            $isEvolved = in_array($key, $evolvedItems, true);
 
             $this->assertNotNull($newApp, "العنصر [{$key}] غير موجود بالمصدر الجديد");
             $this->assertSame($oldApp['name'], $newApp['name'], "اختلاف بالاسم لـ[{$key}]");
             $this->assertSame($oldApp['tagline'], $newApp['tagline'], "اختلاف بالـTagline لـ[{$key}]");
             $this->assertSame($oldApp['description'], $newApp['description'], "اختلاف بالوصف لـ[{$key}]");
-            $this->assertSame($oldApp['status'], $newApp['status'], "اختلاف بالحالة لـ[{$key}]");
             $this->assertSame($oldApp['icon'], $newApp['icon'], "اختلاف بالأيقونة لـ[{$key}]");
-            $this->assertSame($oldApp['free'] ?? false, $newApp['free'], "اختلاف بحقل free لـ[{$key}]");
             $this->assertEqualsCanonicalizing(
                 $oldApp['audiences'] ?? [],
                 $newApp['audiences'],
                 "اختلاف بالجمهور المستهدف لـ[{$key}]"
             );
+
+            if ($isEvolved) {
+                // التطوّر المتوقَّع نفسه: تحقّق صراحة أنه انتقل لـ"مُطلَق"، لا اختلاف عشوائي.
+                $this->assertSame('available', $newApp['status'], "[{$key}] يُفترَض يكون available بعد الإطلاق");
+                $this->assertTrue($newApp['free'], "[{$key}] يُفترَض يكون free بعد الإطلاق");
+                $this->assertArrayHasKey('href', $newApp, "[{$key}] يُفترَض يملك href بعد الإطلاق");
+
+                continue;
+            }
+
+            $this->assertSame($oldApp['status'], $newApp['status'], "اختلاف بالحالة لـ[{$key}]");
+            $this->assertSame($oldApp['free'] ?? false, $newApp['free'], "اختلاف بحقل free لـ[{$key}]");
 
             if (isset($oldApp['href'])) {
                 $this->assertSame($oldApp['href'], $newApp['href'] ?? null, "اختلاف بالرابط لـ[{$key}]");

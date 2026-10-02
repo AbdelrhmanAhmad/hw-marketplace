@@ -53,4 +53,20 @@ enum AuditEvent: string
     case CaseClientAccessRestored = 'case_client_access_restored';
     case CaseSignatureSaved = 'case_signature_saved';
     case CaseDeleted = 'case_deleted';
+    case ArticleAuthorRequested = 'article_author_requested';
+    case ArticleAuthorApproved = 'article_author_approved';
+    case ArticleAuthorRejected = 'article_author_rejected';
+    case ArticleCreated = 'article_created';
+    case ArticleSubmittedForReview = 'article_submitted_for_review';
+    case ArticlePublished = 'article_published';
+    case ArticleRejected = 'article_rejected';
+    case ServiceListingCreated = 'service_listing_created';
+    case ServiceListingClosed = 'service_listing_closed';
+    case ServiceListingInquirySubmitted = 'service_listing_inquiry_submitted';
+    case TechServiceRequestSubmitted = 'tech_service_request_submitted';
+    case TrainingOpportunityCreated = 'training_opportunity_created';
+    case TrainingOpportunityClosed = 'training_opportunity_closed';
+    case TrainingApplicationSubmitted = 'training_application_submitted';
+    case CaseDraftGenerated = 'case_draft_generated';
+    case CaseDraftGenerationFailed = 'case_draft_generation_failed';
 }

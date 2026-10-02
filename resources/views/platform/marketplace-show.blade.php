@@ -24,6 +24,8 @@
 
                         @if ($app['free'] ?? false)
                             <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-white/15 text-white">مجاني</span>
+                        @elseif ($app['in_app_purchase'] ?? false)
+                            <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-white/15 text-white">دفع داخل التطبيق</span>
                         @endif
                     </div>
 
@@ -40,6 +42,37 @@
                 <div>
                     <h2 class="text-lg font-bold text-gray-900 mb-3">نبذة عن التطبيق</h2>
                     <p class="text-gray-600 leading-relaxed">{{ $app['description'] }}</p>
+                </div>
+
+                @if (! empty($app['services']))
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">الخدمات المقدَّمة</h2>
+                        <ul class="space-y-2">
+                            @foreach ($app['services'] as $service)
+                                <li class="flex items-start gap-2 text-gray-600">
+                                    <svg class="h-5 w-5 text-brand-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <span>{{ $service }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <div>
+                    <h2 class="text-lg font-bold text-gray-900 mb-3">الربط والتكامل</h2>
+                    @if (! empty($app['integrations']))
+                        <div class="flex flex-wrap gap-2">
+                            @foreach ($app['integrations'] as $integration)
+                                <span class="text-sm bg-brand-50 text-brand-700 px-3 py-1.5 rounded-full ring-1 ring-inset ring-brand-100">
+                                    {{ $integration }}
+                                </span>
+                            @endforeach
+                        </div>
+                    @else
+                        <p class="text-sm text-gray-400">لا تكامل خارجي — يعمل بالكامل داخل منصة حكم ورقم.</p>
+                    @endif
                 </div>
 
                 @if (! empty($app['audiences']))

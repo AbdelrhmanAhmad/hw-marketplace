@@ -29,7 +29,7 @@ class MarketplaceCatalogParityCheck extends Command
      * عناصر تجاوزت اللقطة القديمة عمدًا (أصبحت تطبيقات حقيقية) — `status`
      * يتغيّر بالتصميم لهذي فقط، لا يُعتبَر Mismatch.
      */
-    private const EVOLVED_ITEMS = ['bankruptcy-tech'];
+    private const EVOLVED_ITEMS = ['bankruptcy-tech', 'articles', 'community', 'tech-portal', 'internships', 'ai-case-draft'];
 
     public function handle(): int
     {

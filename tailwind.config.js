@@ -14,6 +14,8 @@ export default {
             fontFamily: {
                 sans: ['Tajawal', 'Figtree', ...defaultTheme.fontFamily.sans],
                 display: ['Poppins', ...defaultTheme.fontFamily.sans],
+                // مجتمع الخدمات — هوية دافئة متوسطية، خط عرض بديل بطابع بيروتي كلاسيكي.
+                markazi: ['"Markazi Text"', ...defaultTheme.fontFamily.serif],
             },
             colors: {
                 brand: {

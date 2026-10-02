@@ -1,4 +1,4 @@
-@props(['key', 'name', 'tagline', 'description', 'status' => 'soon', 'href' => null, 'icon' => 'legal', 'free' => false, 'subscribed' => false])
+@props(['key', 'name', 'tagline', 'description', 'status' => 'soon', 'href' => null, 'icon' => 'legal', 'free' => false, 'inAppPurchase' => false, 'subscribed' => false])
 
 @php
     $available = $status === 'available';
@@ -25,6 +25,10 @@
         @if ($free)
             <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-forest text-white">
                 مجاني
+            </span>
+        @elseif ($inAppPurchase)
+            <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-gold-600 text-white">
+                دفع داخل التطبيق
             </span>
         @endif
     </div>

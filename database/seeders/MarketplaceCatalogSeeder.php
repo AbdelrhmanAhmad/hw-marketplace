@@ -50,6 +50,27 @@ class MarketplaceCatalogSeeder extends Seeder
             'network' => 'community-networking',
             'internships' => 'training-development',
             'ai-case-draft' => 'tech-solutions',
+
+            // الدفعة التالية من البوابات المقترحة (Coming Soon، بلا Backend بعد).
+            'e-invoicing' => 'financial-services',
+            'cloud-accounting' => 'financial-services',
+            'payment-gateway' => 'financial-services',
+            'billable-hours' => 'financial-services',
+            'e-signature' => 'legal-services',
+            'najiz-integration' => 'legal-services',
+            'contracts' => 'legal-services',
+            'analytics' => 'tech-solutions',
+            'consultations' => 'community-networking',
+            'freelance-marketplace' => 'community-networking',
+
+            // الدفعة الثالثة (فجوات سوق).
+            'expert-witnesses' => 'legal-services',
+            'asset-valuation' => 'financial-services',
+            'aml-compliance' => 'legal-services',
+            'case-law' => 'knowledge-content',
+            'firm-referrals' => 'community-networking',
+            'bylaws-drafting' => 'legal-services',
+            'legal-translation' => 'legal-services',
         ];
 
         // إعادة تشغيل الـSeeder آمنة (Idempotent) — entry_route يُحدَّث دائمًا
@@ -58,6 +79,19 @@ class MarketplaceCatalogSeeder extends Seeder
         $entryRoutes = [
             'marefa' => 'marefa.home',
             'bankruptcy-tech' => 'bankruptcy-tech.cases.index',
+            // articles.index (عام بالكامل، بلا Auth) — نفس منطق marefa.home:
+            // "التفعيل" شكلي، المحتوى نفسه عام أصلًا (راجع قرارات خطة بوابة المقالات).
+            'articles' => 'articles.index',
+            // مجتمع الخدمات — بخلاف marefa/articles، خلف Auth+Entitlement
+            // كليًا (عضوية مهنيين، لا محتوى عام).
+            'community' => 'community.index',
+            // بوابة التقنية — عامة بالكامل بلا Auth (مزوّد واحد: المنصة نفسها).
+            'tech-portal' => 'tech-portal.index',
+            // بوابة التدريب التعاوني — تصفّح عام، التقديم وحده يتطلب Auth.
+            'internships' => 'internships.index',
+            // محرك مسودة القضية الذكي — لا صفحة مستقلة (ميزة داخل قضية إفلاس
+            // تك قائمة)، نقطة الدخول نفس قائمة القضايا حيث يظهر تبويب "المسودة الذكية".
+            'ai-case-draft' => 'bankruptcy-tech.cases.index',
         ];
 
         // مرفا وإفلاس تك فقط يدعمان اشتراكًا مؤسسيًا فعليًا (both) — الستة
@@ -68,6 +102,9 @@ class MarketplaceCatalogSeeder extends Seeder
         $billingOverrides = [
             'marefa' => ['billing_model' => 'both', 'pricing_model' => 'free'],
             'bankruptcy-tech' => ['billing_model' => 'both', 'pricing_model' => 'free'],
+            // ليس "مجاني" — دخول البوابة بلا رسوم، لكن كل خدمة بعينها تُدفَع
+            // داخل التطبيق (لا بوابة دفع بعد، دفع/تفاوض يدوي حاليًا).
+            'tech-portal' => ['billing_model' => 'user_only', 'pricing_model' => 'in_app_purchase'],
         ];
 
         foreach (PlatformApps::all() as $app) {
@@ -90,6 +127,8 @@ class MarketplaceCatalogSeeder extends Seeder
                     'billing_model' => $billing['billing_model'],
                     'pricing_model' => $billing['pricing_model'],
                     'compatibility' => $app['audiences'] ?? [],
+                    'services' => $app['services'] ?? [],
+                    'integrations' => $app['integrations'] ?? [],
                     'version' => '1.0',
                 ],
             );

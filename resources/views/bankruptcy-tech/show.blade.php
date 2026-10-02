@@ -65,6 +65,9 @@
             'diagnosis' => ['label' => 'التشخيص والتوصية', 'done' => $isReadyForRecommendation, 'tabs' => [
                 'wizard' => 'معالج التشخيص',
             ]],
+            'ai' => ['label' => 'المسودة الذكية', 'done' => null, 'tabs' => [
+                'ai-draft' => 'توليد مسودة',
+            ]],
             'documents' => ['label' => 'المستندات', 'done' => null, 'tabs' => [
                 'legal-documents' => 'المستندات القانونية',
                 'documents' => 'المستندات المرفوعة ('.$case->documents->count().')',
@@ -300,6 +303,61 @@
             @empty
                 <div class="text-center text-gray-400 py-10">لا إجراءات مُضافة بعد.</div>
             @endforelse
+        </div>
+
+        {{-- المسودة الذكية --}}
+        <div x-show="tab === 'ai-draft'" x-cloak class="space-y-6">
+            @php $latestDraft = $case->draftGenerations()->latest()->first(); @endphp
+
+            <div class="bg-white border border-gray-100 rounded-2xl p-6">
+                <div class="flex items-center justify-between gap-4 flex-wrap mb-2">
+                    <div>
+                        <h3 class="font-bold text-gray-900">توليد مسودة أولية بالذكاء الاصطناعي</h3>
+                        <p class="text-xs text-gray-500 mt-1">تُبنى المسودة حصرًا من بيانات القضية المُسجَّلة (الدائنون، الأصول، الأطراف، الإجراءات) — مراجعة محامٍ مرخّص إلزامية قبل أي استخدام رسمي.</p>
+                    </div>
+                    <form action="{{ route('bankruptcy-tech.cases.ai-draft.store', $case) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="bg-brand-600 hover:bg-brand-700 text-white rounded-full px-5 py-2.5 text-sm font-semibold transition-colors shrink-0">
+                            {{ $latestDraft ? 'توليد مسودة جديدة' : 'توليد أول مسودة' }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            @if ($latestDraft)
+                <div class="bg-white border border-gray-100 rounded-2xl p-6">
+                    @if ($latestDraft->isCompleted())
+                        <div class="flex items-center gap-2 mb-4 text-xs text-gray-400">
+                            <span class="bg-brand-50 text-brand-700 px-2.5 py-1 rounded-full font-semibold">{{ $latestDraft->model }}</span>
+                            <span>{{ $latestDraft->created_at->diffForHumans() }}</span>
+                            <span>· بواسطة {{ $latestDraft->requestedBy->name }}</span>
+                        </div>
+                        <div class="text-gray-700 leading-loose text-[15px] whitespace-pre-line">{{ $latestDraft->content }}</div>
+                    @else
+                        <div class="bg-red-50 border border-red-100 text-red-700 rounded-xl px-4 py-3 text-sm">
+                            تعذّر التوليد: {{ $latestDraft->error_message }}
+                        </div>
+                    @endif
+                </div>
+            @endif
+
+            @php $pastGenerations = $case->draftGenerations()->latest()->skip(1)->take(10)->get(); @endphp
+            @if ($pastGenerations->isNotEmpty())
+                <div class="bg-white border border-gray-100 rounded-2xl p-6">
+                    <h4 class="text-sm font-semibold text-gray-700 mb-3">مسودات سابقة</h4>
+                    <ul class="space-y-2">
+                        @foreach ($pastGenerations as $generation)
+                            <li class="flex items-center gap-2 text-xs text-gray-400">
+                                <span @class(['px-2 py-0.5 rounded-full font-semibold', 'bg-green-50 text-green-700' => $generation->isCompleted(), 'bg-red-50 text-red-700' => ! $generation->isCompleted()])>
+                                    {{ $generation->isCompleted() ? 'مكتملة' : 'فشلت' }}
+                                </span>
+                                <span>{{ $generation->created_at->translatedFormat('d F Y، h:i A') }}</span>
+                                <span>· {{ $generation->requestedBy->name }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </div>
 
         {{-- المستندات --}}

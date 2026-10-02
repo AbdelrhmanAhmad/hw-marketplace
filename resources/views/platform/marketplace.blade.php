@@ -71,6 +71,7 @@
                         :href="$app['href'] ?? null"
                         :icon="$app['icon']"
                         :free="$app['free'] ?? false"
+                        :in-app-purchase="$app['in_app_purchase'] ?? false"
                         :subscribed="$app['subscribed'] ?? false"
                     />
                 @endforeach

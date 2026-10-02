@@ -110,6 +110,11 @@ class BankruptcyCase extends Model
         return $this->hasMany(CaseTimelineEvent::class)->orderBy('sort_order');
     }
 
+    public function draftGenerations(): HasMany
+    {
+        return $this->hasMany(CaseDraftGeneration::class);
+    }
+
     public function isPersonal(): bool
     {
         return $this->organization_id === null;

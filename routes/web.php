@@ -6,6 +6,7 @@ use App\Http\Controllers\BankruptcyTech\CaseChecklistController;
 use App\Http\Controllers\BankruptcyTech\CaseClientController;
 use App\Http\Controllers\BankruptcyTech\CaseCreditorController;
 use App\Http\Controllers\BankruptcyTech\CaseDocumentController;
+use App\Http\Controllers\BankruptcyTech\CaseDraftController;
 use App\Http\Controllers\BankruptcyTech\CaseEmployeeController;
 use App\Http\Controllers\BankruptcyTech\CaseHearingController;
 use App\Http\Controllers\BankruptcyTech\CaseNoteController;
@@ -16,7 +17,12 @@ use App\Http\Controllers\BankruptcyTech\CaseSignatureController;
 use App\Http\Controllers\BankruptcyTech\CaseTimelineController;
 use App\Http\Controllers\BankruptcyTech\CaseWizardController;
 use App\Http\Controllers\BankruptcyTech\ClientPortalController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\Articles\ArticleAuthorController;
+use App\Http\Controllers\Articles\ArticleDashboardController;
 use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\Community\ServiceListingDashboardController;
+use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LawController;
@@ -28,6 +34,10 @@ use App\Http\Controllers\OrganizationSeatController;
 use App\Http\Controllers\PlatformController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceInterestController;
+use App\Http\Controllers\TechPortalCartController;
+use App\Http\Controllers\TechPortalController;
+use App\Http\Controllers\Training\TrainingOpportunityDashboardController;
+use App\Http\Controllers\TrainingController;
 use App\Livewire\GratuityCalculator;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +53,40 @@ Route::get('/laws', [LawController::class, 'index'])->name('laws.index');
 Route::get('/laws/{lawEntry}', [LawController::class, 'show'])->name('laws.show');
 
 Route::get('/updates', [LegalUpdateController::class, 'index'])->name('updates.index');
+
+// بوابة المقالات — عرض عام بالكامل (لا Auth، مطابق لـlaws/updates)، مطابقًا
+// لنمط entry_route المجاني (marefa.home): "التفعيل" شكلي، المحتوى عام أصلًا.
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/{article:slug}', [ArticleController::class, 'show'])->name('articles.show');
+
+// مجتمع الخدمات — دليل عام (محامون/مختصون يعرضون خدماتهم للعامة)، تصفح
+// بلا Auth مطابق تمامًا لبوابة المقالات. إرسال استفسار مسموح لأي زائر ضيف
+// أيضًا (نفس منطق service-interest.store العام). النشر نفسه (لوحة
+// "إعلاناتي") خلف Auth+marketplace.entitled بمجموعة apps/community أدناه.
+Route::get('/community', [CommunityController::class, 'index'])->name('community.index');
+Route::get('/community/{listing}', [CommunityController::class, 'show'])->name('community.show');
+Route::post('/community/{listing}/inquiry', [CommunityController::class, 'storeInquiry'])->name('community.inquiry');
+
+// بوابة التقنية — مزوّد واحد (المنصة نفسها)، كتالوج ثابت يديره فريق المنصة
+// عبر Filament حصرًا (لا نشر ذاتي). عامة بالكامل بلا Auth — السلة Session
+// فقط حتى لحظة الإرسال (TechServiceRequestService، BR-013).
+Route::get('/tech-portal', [TechPortalController::class, 'index'])->name('tech-portal.index');
+Route::get('/tech-portal/cart', [TechPortalCartController::class, 'show'])->name('tech-portal.cart.show');
+// "submit" مسار حرفي — يجب تسجيله قبل {techService} المتغيّر، وإلا يبتلعه
+// الأخير (يطابق أي سلسلة كـmodel-binding id، فيفشل 404 على "submit" حرفيًا).
+Route::post('/tech-portal/cart/submit', [TechPortalCartController::class, 'submit'])->name('tech-portal.cart.submit');
+Route::post('/tech-portal/cart/{techService}', [TechPortalCartController::class, 'add'])->name('tech-portal.cart.add');
+Route::delete('/tech-portal/cart/{techService}', [TechPortalCartController::class, 'remove'])->name('tech-portal.cart.remove');
+
+// بوابة التدريب التعاوني — مكاتب/شركات تنشر فرصًا، الطلاب يتصفحون بلا Auth
+// (مطابق لمجتمع الخدمات)، لكن التقديم وحده يتطلب تسجيل دخول (auth على
+// مستوى الـRoute تحديدًا لهذا الفعل فقط — الفرق الجوهري عن استفسارات
+// مجتمع الخدمات العامة للضيوف).
+Route::get('/internships', [TrainingController::class, 'index'])->name('internships.index');
+Route::get('/internships/{opportunity}', [TrainingController::class, 'show'])->name('internships.show');
+Route::post('/internships/{opportunity}/apply', [TrainingController::class, 'apply'])
+    ->middleware('auth')
+    ->name('internships.apply');
 
 Route::get('/calculators/gratuity', GratuityCalculator::class)->name('calculators.gratuity');
 
@@ -112,6 +156,14 @@ Route::middleware('auth')->group(function () {
             Route::post('/cases/{case}/client', [CaseClientController::class, 'store'])->name('cases.client.store');
             Route::post('/cases/{case}/client/revoke', [CaseClientController::class, 'revoke'])->name('cases.client.revoke');
             Route::post('/cases/{case}/client/restore', [CaseClientController::class, 'restore'])->name('cases.client.restore');
+
+            // محرك مسودة القضية الذكي — عنصر كتالوج مستقل (ai-case-draft)،
+            // طبقة Entitlement إضافية فوق bankruptcy-tech نفسها. الأهلية
+            // للقضية بعينها تبقى BankruptcyCasePolicy داخل CaseDraftService
+            // (فصل Entitlement/Authorization المعتاد، AD-005).
+            Route::middleware('marketplace.entitled:ai-case-draft')->group(function () {
+                Route::post('/cases/{case}/ai-draft', [CaseDraftController::class, 'store'])->name('cases.ai-draft.store');
+            });
         });
 
     // المرحلة 2 — بوابة العميل الخارجية (المدين). عمدًا خارج
@@ -123,6 +175,54 @@ Route::middleware('auth')->group(function () {
         Route::post('/cases/{case}/documents', [ClientPortalController::class, 'storeDocument'])->name('cases.documents.store');
         Route::get('/cases/{case}/documents/{document}/download', [ClientPortalController::class, 'downloadDocument'])->name('cases.documents.download');
     });
+
+    // بوابة المقالات — لوحة المؤلف فقط (القراءة العامة بمسار /articles خارج
+    // هذي المجموعة). "التفعيل" شكلي زي marefa — لكن دخول لوحة المؤلف نفسها
+    // يتطلب marketplace.entitled:articles مطابقًا لبقية التطبيقات.
+    Route::middleware('marketplace.entitled:articles')
+        ->prefix('apps/articles')
+        ->name('articles.dashboard.')
+        ->group(function () {
+            Route::get('/', [ArticleDashboardController::class, 'index'])->name('index');
+            Route::get('/become-author', [ArticleAuthorController::class, 'create'])->name('author.create');
+            Route::post('/become-author', [ArticleAuthorController::class, 'store'])->name('author.store');
+            Route::get('/create', [ArticleDashboardController::class, 'create'])->name('create');
+            Route::post('/', [ArticleDashboardController::class, 'store'])->name('store');
+            Route::get('/{article}/edit', [ArticleDashboardController::class, 'edit'])->name('edit');
+            Route::patch('/{article}', [ArticleDashboardController::class, 'update'])->name('update');
+            Route::post('/{article}/submit', [ArticleDashboardController::class, 'submit'])->name('submit');
+        });
+
+    // مجتمع الخدمات — لوحة "إعلاناتي" فقط (التصفح العام بمسار /community
+    // خارج هذي المجموعة، مطابق تمامًا لبوابة المقالات). "التفعيل" شكلي زي
+    // marefa/articles — لكن دخول لوحة النشر نفسها يتطلب marketplace.entitled:community.
+    Route::middleware('marketplace.entitled:community')
+        ->prefix('apps/community')
+        ->name('community.dashboard.')
+        ->group(function () {
+            Route::get('/', [ServiceListingDashboardController::class, 'index'])->name('index');
+            Route::get('/create', [ServiceListingDashboardController::class, 'create'])->name('create');
+            Route::post('/', [ServiceListingDashboardController::class, 'store'])->name('store');
+            Route::get('/{listing}', [ServiceListingDashboardController::class, 'show'])->name('show');
+            Route::post('/{listing}/close', [ServiceListingDashboardController::class, 'close'])->name('close');
+        });
+
+    // بوابة التدريب التعاوني — لوحة "فرصي" فقط (التصفح العام بمسار
+    // /internships خارج هذي المجموعة، مطابق تمامًا لمجتمع الخدمات).
+    Route::middleware('marketplace.entitled:internships')
+        ->prefix('apps/internships')
+        ->name('internships.dashboard.')
+        ->group(function () {
+            Route::get('/', [TrainingOpportunityDashboardController::class, 'index'])->name('index');
+            Route::get('/create', [TrainingOpportunityDashboardController::class, 'create'])->name('create');
+            Route::post('/', [TrainingOpportunityDashboardController::class, 'store'])->name('store');
+            Route::get('/{opportunity}', [TrainingOpportunityDashboardController::class, 'show'])->name('show');
+            Route::post('/{opportunity}/close', [TrainingOpportunityDashboardController::class, 'close'])->name('close');
+            Route::get(
+                '/{opportunity}/applications/{application}/documents/{document}/download',
+                [TrainingOpportunityDashboardController::class, 'downloadDocument']
+            )->name('applications.documents.download');
+        });
 });
 
 require __DIR__.'/auth.php';

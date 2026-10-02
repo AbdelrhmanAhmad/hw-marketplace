@@ -60,7 +60,13 @@ class MarketplaceController extends Controller
     {
         $item = MarketplaceItem::where('key', $key)->firstOrFail();
 
-        abort_unless($item->pricing_model === 'free' && $item->billing_model !== 'organization_only', Response::HTTP_FORBIDDEN);
+        // in_app_purchase (بوابة التقنية) — التفعيل نفسه بلا رسوم اشتراك، فقط
+        // كل خدمة بعينها تُدفَع لاحقًا خارج Billing — يمر بنفس مسار الاشتراك
+        // "المجاني" لأن الاشتراك ذاته فعليًا مجاني (راجع SubscriptionService).
+        abort_unless(
+            in_array($item->pricing_model, ['free', 'in_app_purchase'], true) && $item->billing_model !== 'organization_only',
+            Response::HTTP_FORBIDDEN
+        );
 
         $subscriptions->subscribeUserToFreeItem(Auth::user(), $item);
 

@@ -6,11 +6,13 @@ use App\Enums\AccessReason;
 use App\Models\MarketplaceItem;
 use App\Repositories\MarketplaceCatalogRepository;
 use App\Services\EntitlementResolver;
+use App\Services\MarketplaceInterestService;
 use App\Services\SubscriptionService;
 use App\Support\ActiveOrganizationContext;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RuntimeException;
 use Symfony\Component\HttpFoundation\Response;
 
 class MarketplaceController extends Controller
@@ -87,6 +89,26 @@ class MarketplaceController extends Controller
         $subscriptions->cancel($subscription);
 
         return redirect()->route('my-apps.index')->with('cancelled', $item->name);
+    }
+
+    /**
+     * Record interest for the signed-in SSO-linked user (Core API). Not a subscription.
+     */
+    public function interest(string $key, MarketplaceInterestService $interests): RedirectResponse
+    {
+        try {
+            $interests->express(Auth::user(), $key);
+        } catch (RuntimeException $e) {
+            return redirect()
+                ->route('platform.marketplace.show', $key)
+                ->withErrors(['interest' => $e->getMessage()]);
+        }
+
+        $item = MarketplaceItem::where('key', $key)->first();
+
+        return redirect()
+            ->route('platform.marketplace.show', $key)
+            ->with('interest_success', $item?->name ?? $key);
     }
 
     private function withSubscriptionState(array $app): array

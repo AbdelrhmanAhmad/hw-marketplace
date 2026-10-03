@@ -121,20 +121,47 @@
                             @endunless
                         @endif
                     @else
-                        <button
-                            type="button"
-                            x-data
-                            x-on:click="window.dispatchEvent(new CustomEvent('open-interest-modal', { detail: { key: '{{ $app['key'] }}', name: '{{ $app['name'] }}' } }))"
-                            class="w-full inline-flex items-center justify-center gap-1.5 bg-gold-500 hover:bg-gold-400 text-gray-900 rounded-full py-3 font-semibold transition-colors"
-                        >
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
-                            أنا مهتم
-                        </button>
-                        <p class="text-xs text-gray-400 text-center mt-3">
-                            هذا التطبيق قيد التطوير حاليًا — راح نراسلك أول ما يكون جاهزًا.
-                        </p>
+                        @auth
+                            <form action="{{ route('platform.marketplace.interest', $app['key']) }}" method="POST">
+                                @csrf
+                                <button
+                                    type="submit"
+                                    class="w-full inline-flex items-center justify-center gap-1.5 bg-gold-500 hover:bg-gold-400 text-gray-900 rounded-full py-3 font-semibold transition-colors"
+                                >
+                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                    </svg>
+                                    سجّل اهتمامي
+                                </button>
+                            </form>
+                            <p class="text-xs text-gray-400 text-center mt-3">
+                                يسجّل اهتمامك على حساب حكم ورقم — ليس اشتراكاً ولا تفعيلاً.
+                            </p>
+                            @error('interest')
+                                <p class="text-xs text-red-600 text-center mt-2">{{ $message }}</p>
+                            @enderror
+                        @else
+                            <a
+                                href="{{ route('auth.core.redirect', ['intended' => '/marketplace/'.$app['key']]) }}"
+                                class="w-full inline-flex items-center justify-center gap-1.5 bg-gold-500 hover:bg-gold-400 text-gray-900 rounded-full py-3 font-semibold transition-colors"
+                            >
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                </svg>
+                                سجّل اهتمامي عبر حكم ورقم
+                            </a>
+                            <p class="text-xs text-gray-400 text-center mt-3">
+                                ادخل بحساب حكم ورقم ثم سجّل اهتمامك — أو اترك بريدك عبر نموذج الاهتمام للزوّار.
+                            </p>
+                            <button
+                                type="button"
+                                x-data
+                                x-on:click="window.dispatchEvent(new CustomEvent('open-interest-modal', { detail: { key: '{{ $app['key'] }}', name: '{{ $app['name'] }}' } }))"
+                                class="w-full mt-3 text-center text-sm text-brand-700 hover:underline"
+                            >
+                                أو اترك بريدك كزائر
+                            </button>
+                        @endauth
                     @endif
                 </div>
             </div>

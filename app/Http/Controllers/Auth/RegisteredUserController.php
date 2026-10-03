@@ -3,49 +3,28 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
-use Illuminate\Validation\ValidationException;
-use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
     /**
-     * Display the registration view.
+     * Customer registration is Core SSO (identity authority = Hukm w Rakam).
      */
-    public function create(): View
+    public function create(Request $request): RedirectResponse
     {
-        return view('auth.register');
+        return redirect()->route('auth.core.redirect', [
+            'intended' => $request->session()->get('url.intended', '/marketplace'),
+        ]);
     }
 
     /**
-     * Handle an incoming registration request.
-     *
-     * @throws ValidationException
+     * Local registration disabled for customers — use Core SSO.
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        return redirect()->route('auth.core.redirect', [
+            'intended' => $request->session()->get('url.intended', '/marketplace'),
         ]);
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-
-        event(new Registered($user));
-
-        Auth::login($user);
-
-        return redirect(route('dashboard', absolute: false));
     }
 }

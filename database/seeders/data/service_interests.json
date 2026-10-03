@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "service_key": "bankruptcy-tech",
+        "service_name": "إفلاس تك",
+        "email": "test@example.com",
+        "created_at": "2026-08-04 15:56:59",
+        "updated_at": "2026-08-04 15:56:59"
+    }
+]

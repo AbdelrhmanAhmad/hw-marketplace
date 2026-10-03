@@ -25,7 +25,7 @@ return new class extends Migration
             $table->unsignedBigInteger('size_bytes')->nullable();
             $table->timestamps();
 
-            $table->unique(['training_application_id', 'type']);
+            $table->unique(['training_application_id', 'type'], 'training_application_documents_unique');
         });
     }
 

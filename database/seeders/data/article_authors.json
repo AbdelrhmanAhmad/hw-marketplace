@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "user_id": 22,
+        "bio": "محامٍ بخبرة عشر سنوات بقضايا الشركات التجارية.",
+        "expertise": "محامٍ متخصص بقانون الشركات",
+        "status": "approved",
+        "reviewed_by_user_id": 21,
+        "reviewed_at": "2026-09-08 10:09:44",
+        "rejection_reason": null,
+        "created_at": "2026-09-08 10:09:43",
+        "updated_at": "2026-09-08 10:09:44"
+    },
+    {
+        "id": 2,
+        "user_id": 23,
+        "bio": "نبذة تجريبية عن الخبرة القانونية.",
+        "expertise": "محامٍ متخصص",
+        "status": "approved",
+        "reviewed_by_user_id": 21,
+        "reviewed_at": "2026-09-08 10:20:50",
+        "rejection_reason": null,
+        "created_at": "2026-09-08 10:20:29",
+        "updated_at": "2026-09-08 10:20:50"
+    },
+    {
+        "id": 3,
+        "user_id": 24,
+        "bio": "محامية مرخصة، تعمل في مجال قانون الشركات والتقاضي التجاري منذ أكثر من عشر سنوات.",
+        "expertise": "محامية متخصصة بقانون الشركات",
+        "status": "approved",
+        "reviewed_by_user_id": 21,
+        "reviewed_at": "2026-09-08 10:23:33",
+        "rejection_reason": null,
+        "created_at": "2026-09-08 10:23:33",
+        "updated_at": "2026-09-08 10:23:33"
+    },
+    {
+        "id": 4,
+        "user_id": 25,
+        "bio": "مستشار مالي معتمد، يركّز على التخطيط المالي للمنشآت الصغيرة والمتوسطة.",
+        "expertise": "مستشار مالي معتمد",
+        "status": "approved",
+        "reviewed_by_user_id": 21,
+        "reviewed_at": "2026-09-08 10:23:33",
+        "rejection_reason": null,
+        "created_at": "2026-09-08 10:23:33",
+        "updated_at": "2026-09-08 10:23:33"
+    },
+    {
+        "id": 5,
+        "user_id": 26,
+        "bio": "محاسبة قانونية معتمدة (SOCPA)، خبرة في المراجعة والامتثال الضريبي.",
+        "expertise": "محاسبة قانونية معتمدة",
+        "status": "approved",
+        "reviewed_by_user_id": 21,
+        "reviewed_at": "2026-09-08 10:23:34",
+        "rejection_reason": null,
+        "created_at": "2026-09-08 10:23:34",
+        "updated_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 6,
+        "user_id": 19,
+        "bio": "حستث؛دننسزيدنسريدنتسشث",
+        "expertise": "رحسنياهح",
+        "status": "pending",
+        "reviewed_by_user_id": null,
+        "reviewed_at": null,
+        "rejection_reason": null,
+        "created_at": "2026-10-03 17:54:37",
+        "updated_at": "2026-10-03 17:54:37"
+    }
+]

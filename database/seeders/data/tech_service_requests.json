@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "user_id": null,
+        "name": "مكتب المحاماة التجريبي",
+        "email": "firm@example.test",
+        "phone": "0501112233",
+        "message": "نحتاج موقعًا إلكترونيًا جديدًا لمكتبنا، تحقق حي عبر Playwright.",
+        "status": "new",
+        "created_at": "2026-09-08 11:46:12",
+        "updated_at": "2026-09-08 11:46:12"
+    }
+]

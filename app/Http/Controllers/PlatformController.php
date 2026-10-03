@@ -6,6 +6,8 @@ class PlatformController extends Controller
 {
     public function index()
     {
-        return view('platform.home');
+        $variant = config('marketplace_ui.home_variant', 'glass');
+
+        return view($variant === 'classic' ? 'platform.home-classic' : 'platform.home');
     }
 }

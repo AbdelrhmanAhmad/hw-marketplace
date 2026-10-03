@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "service_listing_id": 1,
+        "user_id": null,
+        "name": "عميل زائر",
+        "email": "visitor@example.test",
+        "phone": "0599999999",
+        "message": "أحتاج استشارة لتأسيس شركة ناشئة، تحقق حي عبر Playwright كزائر غير مسجَّل.",
+        "created_at": "2026-09-08 11:06:18",
+        "updated_at": "2026-09-08 11:06:18"
+    },
+    {
+        "id": 2,
+        "service_listing_id": 7,
+        "user_id": 19,
+        "name": "مستخدم تجريبي (Demo)",
+        "email": "demo-bankruptcy-tech-owner@example.test",
+        "phone": null,
+        "message": null,
+        "created_at": "2026-09-10 16:21:05",
+        "updated_at": "2026-09-10 16:21:05"
+    }
+]

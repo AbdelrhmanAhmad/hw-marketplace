@@ -1,3 +1,6 @@
+/* Glass home styles are scoped to .mp-glass-body — safe on classic pages. */
+@import './marketplace-glass-home.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

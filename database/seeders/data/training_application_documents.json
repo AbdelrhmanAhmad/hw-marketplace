@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "training_application_id": 2,
+        "type": "cv",
+        "original_filename": "fake-cv.pdf",
+        "disk": "local",
+        "path": "training-applications\/2\/uQGu3Z8a4ggvrg1Hignw235AJEYRtBWjWUDcY8FI.pdf",
+        "mime_type": "application\/pdf",
+        "size_bytes": 42,
+        "created_at": "2026-09-08 12:26:07",
+        "updated_at": "2026-09-08 12:26:07"
+    },
+    {
+        "id": 2,
+        "training_application_id": 2,
+        "type": "enrollment_letter",
+        "original_filename": "fake-enrollment.pdf",
+        "disk": "local",
+        "path": "training-applications\/2\/bG3tXC0xRvSAFtNOC6HicEC7OfBA82n89XQ7N3E2.pdf",
+        "mime_type": "application\/pdf",
+        "size_bytes": 57,
+        "created_at": "2026-09-08 12:26:07",
+        "updated_at": "2026-09-08 12:26:07"
+    }
+]

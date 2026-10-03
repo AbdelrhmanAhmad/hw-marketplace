@@ -21,7 +21,7 @@ use Illuminate\Notifications\Notifiable;
  * لا Staff يصبح Owner/Member تلقائيًا، ولا العكس. راجع
  * docs/platform-authorization-foundation-specification.md.
  */
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['name', 'email', 'password', 'core_user_id'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable implements FilamentUser
 {

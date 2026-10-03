@@ -43,4 +43,18 @@ return [
         ],
     ],
 
+    /*
+    | Hukm w Rakam (Core) — identity authority for customer SSO + interest API.
+    | Prefer HW_URL; HW_URK is a legacy typo kept as fallback only.
+    */
+    'core' => [
+        'url' => env('HW_URL', env('HW_URK')),
+        'sso' => [
+            'client_id' => env('HW_SSO_CLIENT_ID'),
+            'client_secret' => env('HW_SSO_CLIENT_SECRET'),
+            'redirect_uri' => env('HW_SSO_REDIRECT_URI', env('APP_URL').'/auth/core/callback'),
+        ],
+    ],
+
 ];
+

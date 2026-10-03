@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "عمل",
+        "slug": "labor",
+        "created_at": "2026-07-30 13:32:12",
+        "updated_at": "2026-07-30 13:32:12"
+    },
+    {
+        "id": 2,
+        "name": "تجاري",
+        "slug": "commercial",
+        "created_at": "2026-07-30 13:32:12",
+        "updated_at": "2026-07-30 13:32:12"
+    },
+    {
+        "id": 3,
+        "name": "مدني",
+        "slug": "civil",
+        "created_at": "2026-07-30 13:32:12",
+        "updated_at": "2026-07-30 13:32:12"
+    },
+    {
+        "id": 4,
+        "name": "جزائي",
+        "slug": "criminal",
+        "created_at": "2026-07-30 13:32:12",
+        "updated_at": "2026-07-30 13:32:12"
+    },
+    {
+        "id": 5,
+        "name": "إجراءات قضائية",
+        "slug": "judicial-procedures",
+        "created_at": "2026-07-30 13:32:12",
+        "updated_at": "2026-07-30 13:32:12"
+    },
+    {
+        "id": 6,
+        "name": "أحوال شخصية",
+        "slug": "personal-status",
+        "created_at": "2026-07-30 13:32:12",
+        "updated_at": "2026-07-30 13:32:12"
+    },
+    {
+        "id": 7,
+        "name": "أنظمة عامة",
+        "slug": "general",
+        "created_at": "2026-07-30 13:32:12",
+        "updated_at": "2026-07-30 13:32:12"
+    },
+    {
+        "id": 8,
+        "name": "تقنية وخصوصية",
+        "slug": "tech-privacy",
+        "created_at": "2026-07-30 13:32:12",
+        "updated_at": "2026-07-30 13:32:12"
+    }
+]

@@ -12,23 +12,25 @@ use Illuminate\View\View;
 class AuthenticatedSessionController extends Controller
 {
     /**
-     * Display the login view.
+     * Customer login is Core SSO. Filament /admin keeps local staff login.
      */
-    public function create(): View
+    public function create(Request $request): RedirectResponse
     {
-        return view('auth.login');
+        $intended = $request->session()->get('url.intended', '/marketplace');
+
+        return redirect()->route('auth.core.redirect', [
+            'intended' => is_string($intended) ? $intended : '/marketplace',
+        ]);
     }
 
     /**
-     * Handle an incoming authentication request.
+     * Local password login disabled for customers — use Core SSO.
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
-
-        $request->session()->regenerate();
-
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->route('auth.core.redirect', [
+            'intended' => $request->session()->get('url.intended', '/marketplace'),
+        ]);
     }
 
     /**

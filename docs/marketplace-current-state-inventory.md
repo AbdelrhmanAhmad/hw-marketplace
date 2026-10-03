@@ -5,6 +5,10 @@
 **نوع الوثيقة الأصلي: تدقيق. المنهجية:** كل حكم هنا مصدره تنفيذ فعلي، قراءة كود مباشرة، لا التوثيق وحده.
 **تاريخ التدقيق الأصلي:** 2026-08-17. **تاريخ آخر تحديث:** 2026-09-02.
 
+**قاعدة التطوير المحلي (2026-10-03):** MySQL `hw_marketplace` + seeders Eloquent/`database/seeders/data/*.json` — راجع [`docs/mysql-local-baseline.md`](mysql-local-baseline.md).
+
+**رئيسية السوق (2026-10-03):** Glass مضغوط + هيدر/فوتر بهوية Core + باترنات منسوخة — [`docs/marketplace-glass-home.md`](marketplace-glass-home.md). (Clay أُلغي)
+
 ---
 
 ## 1. Executive Summary (محدَّثة)

@@ -69,8 +69,13 @@
                 </div>
             @else
                 <div class="hidden sm:flex sm:items-center sm:ms-6 gap-4">
-                    <a href="{{ route('login') }}" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">تسجيل الدخول</a>
-                    <a href="{{ route('register') }}" class="text-sm px-4 py-2 rounded-full bg-brand-600 text-white shadow-sm hover:bg-brand-700 hover:shadow transition-all">إنشاء حساب</a>
+                    <a href="{{ route('login') }}" class="text-sm text-gray-600 hover:text-gray-900 transition-colors inline-flex items-center gap-1.5" data-core-sso-link data-core-sso-loading-label="جارٍ تسجيل الدخول عبر حكم ورقم...">
+                        <img src="{{ asset('images/brand/logo-mark.svg') }}" alt="" width="14" height="14">
+                        <span data-core-sso-label>تسجيل الدخول بحساب حكم ورقم</span>
+                    </a>
+                    <a href="{{ route('register') }}" class="text-sm px-4 py-2 rounded-full bg-brand-600 text-white shadow-sm hover:bg-brand-700 hover:shadow transition-all" title="سيُستخدم حسابك للدخول إلى جميع خدمات المنصة">
+                        إنشاء حساب حكم ورقم
+                    </a>
                 </div>
             @endauth
 
@@ -134,8 +139,8 @@
                 </div>
             @else
                 <div class="mt-3 space-y-1 px-4">
-                    <a href="{{ route('login') }}" class="block py-2 text-gray-600">تسجيل الدخول</a>
-                    <a href="{{ route('register') }}" class="block py-2 text-brand-700 font-medium">إنشاء حساب</a>
+                    <a href="{{ route('login') }}" class="block py-2 text-gray-600">تسجيل الدخول بحساب حكم ورقم</a>
+                    <a href="{{ route('register') }}" class="block py-2 text-brand-700 font-medium" title="سيُستخدم حسابك للدخول إلى جميع خدمات المنصة">إنشاء حساب حكم ورقم</a>
                 </div>
             @endauth
         </div>

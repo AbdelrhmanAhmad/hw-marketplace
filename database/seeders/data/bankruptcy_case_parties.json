@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "bankruptcy_case_id": 1,
+        "name": "منشأة تجريبية (Demo)",
+        "role": "debtor",
+        "identifier": "0000000000",
+        "contact": null,
+        "notes": null,
+        "added_by_user_id": 19,
+        "created_at": "2026-09-03 07:44:24",
+        "updated_at": "2026-09-03 07:44:24"
+    }
+]

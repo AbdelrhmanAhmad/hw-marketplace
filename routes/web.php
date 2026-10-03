@@ -33,6 +33,7 @@ use App\Http\Controllers\OrganizationContextController;
 use App\Http\Controllers\OrganizationSeatController;
 use App\Http\Controllers\PlatformController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\CoreSsoController;
 use App\Http\Controllers\ServiceInterestController;
 use App\Http\Controllers\TechPortalCartController;
 use App\Http\Controllers\TechPortalController;
@@ -42,6 +43,13 @@ use App\Livewire\GratuityCalculator;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PlatformController::class, 'index'])->name('platform.home');
+
+Route::get('/auth/core/redirect', [CoreSsoController::class, 'redirect'])
+    ->middleware('throttle:20,1')
+    ->name('auth.core.redirect');
+Route::get('/auth/core/callback', [CoreSsoController::class, 'callback'])
+    ->middleware('throttle:20,1')
+    ->name('auth.core.callback');
 
 Route::get('/marketplace', [MarketplaceController::class, 'index'])->name('platform.marketplace');
 Route::post('/marketplace/interest', [ServiceInterestController::class, 'store'])->name('service-interest.store');
@@ -103,6 +111,10 @@ Route::middleware('auth')->group(function () {
     // Phase 1b — وصول شخصي بتطبيقات مجانية فقط (لا Organization/Seats/Billing).
     Route::post('/marketplace/{key}/activate', [MarketplaceController::class, 'activate'])->name('platform.marketplace.activate');
     Route::post('/marketplace/{key}/cancel', [MarketplaceController::class, 'cancel'])->name('platform.marketplace.cancel');
+    // Interest ≠ Subscription — records interest on Core identity API only.
+    Route::post('/marketplace/{key}/interest', [MarketplaceController::class, 'interest'])
+        ->middleware('throttle:10,1')
+        ->name('platform.marketplace.interest');
     Route::get('/my/apps', [MyAppsController::class, 'index'])->name('my-apps.index');
 
     // Phase 2A — Active Organization Context فقط (لا Organization Subscription/Seats/Access بعد).

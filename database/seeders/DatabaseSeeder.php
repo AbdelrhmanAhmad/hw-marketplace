@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(LawEntriesSeeder::class);
+        $this->call(ArticleCategorySeeder::class);
+        $this->call(TechServiceSeeder::class);
     }
 }

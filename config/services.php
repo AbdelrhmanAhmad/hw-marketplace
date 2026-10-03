@@ -14,6 +14,14 @@ return [
     |
     */
 
+    // محرك مسودة القضية الذكي (ai-case-draft) — أول استهلاك حقيقي لطبقة AI
+    // المشتركة (راجع docs/marketplace-architecture-blueprint.md §7). لا مفتاح
+    // = التطبيق يرفض التوليد بخطأ واضح (لا محاكاة، لا بيانات وهمية).
+    'anthropic' => [
+        'api_key' => env('ANTHROPIC_API_KEY'),
+        'model' => env('ANTHROPIC_MODEL', 'claude-sonnet-5'),
+    ],
+
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
     ],

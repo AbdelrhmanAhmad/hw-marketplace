@@ -16,8 +16,10 @@ use InvalidArgumentException;
  * نقطة الدخول الوحيدة لإنشاء/تفعيل/إلغاء Subscription — لا Subscription::create()
  * مباشر من أي Controller/Livewire/Filament بأي مكان آخر (AD-002 نقطة ٢، BR-013).
  *
- * نطاق Phase 1b: اشتراك شخصي (subscriber_type=user) بتطبيقات مجانية فقط.
- * لا Billing، لا Organization، لا Seats.
+ * نطاق Phase 1b: اشتراك شخصي (subscriber_type=user) بتطبيقات مجانية فقط
+ * (يشمل in_app_purchase — الاشتراك/التفعيل نفسه بلا رسوم، فقط الاستخدام
+ * الفعلي لكل خدمة بعينها يُدفَع لاحقًا خارج هذا النظام؛ بوابة التقنية أول
+ * حالة حقيقية). لا Billing، لا Organization، لا Seats.
  */
 class SubscriptionService
 {
@@ -28,7 +30,7 @@ class SubscriptionService
      */
     public function subscribeUserToFreeItem(User $user, MarketplaceItem $item, ?array $metadata = null): Subscription
     {
-        if ($item->pricing_model !== 'free') {
+        if (! in_array($item->pricing_model, ['free', 'in_app_purchase'], true)) {
             throw new InvalidArgumentException("العنصر [{$item->key}] ليس مجانيًا — لا اشتراك ذاتي مسموح به هنا.");
         }
 

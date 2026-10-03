@@ -70,9 +70,12 @@ class MarketplaceItemResource extends Resource
                             ->label('نموذج التسعير')
                             ->options([
                                 'free' => 'مجاني',
+                                // بوابة التقنية أول عنصر حقيقي بهذا النموذج: التفعيل
+                                // بلا رسوم، لكن كل خدمة بعينها تُدفَع داخل التطبيق.
+                                'in_app_purchase' => 'دفع داخل التطبيق',
                             ])
                             ->nullable()
-                            ->helperText('اتركه فارغًا لعنصر لم يُحدَّد نموذج تسعيره بعد — لا خيار "مدفوع" حتى يوجد عنصر مدفوع حقيقي (لا بيانات وهمية).'),
+                            ->helperText('اتركه فارغًا لعنصر لم يُحدَّد نموذج تسعيره بعد.'),
                         Forms\Components\CheckboxList::make('compatibility')
                             ->label('الجمهور المستهدف')
                             ->options(PlatformApps::audiences())

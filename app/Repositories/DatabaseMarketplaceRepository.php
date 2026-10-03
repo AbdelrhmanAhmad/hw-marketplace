@@ -43,7 +43,13 @@ class DatabaseMarketplaceRepository implements MarketplaceCatalogRepository
             'status' => $entryRoute ? 'available' : 'soon',
             'icon' => $item->icon,
             'audiences' => $item->compatibility ?? [],
+            'services' => $item->services ?? [],
+            'integrations' => $item->integrations ?? [],
             'free' => $item->pricing_model === 'free',
+            // بوابة التقنية أول عنصر حقيقي بهذا النموذج — التفعيل نفسه مجاني
+            // (تصفّح/سلة بلا رسوم اشتراك)، لكن كل خدمة بعينها تُدفَع لاحقًا
+            // خارج نظام Billing الحالي (لا بوابة دفع بعد) — ليس "مجاني" فعليًا.
+            'in_app_purchase' => $item->pricing_model === 'in_app_purchase',
         ];
 
         if ($entryRoute) {

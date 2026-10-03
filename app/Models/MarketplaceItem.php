@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Fillable([
     'key', 'type', 'partner_id', 'category_id', 'name', 'tagline', 'description',
-    'icon', 'status', 'billing_model', 'pricing_model', 'compatibility', 'version',
+    'icon', 'status', 'billing_model', 'pricing_model', 'compatibility', 'services',
+    'integrations', 'version',
 ])]
 class MarketplaceItem extends Model
 {
@@ -17,6 +18,8 @@ class MarketplaceItem extends Model
     {
         return [
             'compatibility' => 'array',
+            'services' => 'array',
+            'integrations' => 'array',
         ];
     }
 

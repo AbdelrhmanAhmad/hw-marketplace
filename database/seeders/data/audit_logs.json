@@ -1,0 +1,2232 @@
+[
+    {
+        "id": 35,
+        "organization_id": null,
+        "actor_user_id": 1,
+        "event": "x",
+        "subject_type": "X",
+        "subject_id": 1,
+        "metadata": null,
+        "created_at": "2026-08-12 11:34:55"
+    },
+    {
+        "id": 36,
+        "organization_id": 5,
+        "actor_user_id": 16,
+        "event": "seat_assigned",
+        "subject_type": "X",
+        "subject_id": 1,
+        "metadata": null,
+        "created_at": "2026-08-12 13:41:54"
+    },
+    {
+        "id": 37,
+        "organization_id": 6,
+        "actor_user_id": 17,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 8,
+        "metadata": null,
+        "created_at": "2026-08-14 21:40:21"
+    },
+    {
+        "id": 38,
+        "organization_id": 6,
+        "actor_user_id": 17,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 8,
+        "metadata": null,
+        "created_at": "2026-08-14 21:40:21"
+    },
+    {
+        "id": 39,
+        "organization_id": 6,
+        "actor_user_id": 17,
+        "event": "seat_assigned",
+        "subject_type": "App\\Models\\SubscriptionSeat",
+        "subject_id": 3,
+        "metadata": null,
+        "created_at": "2026-08-14 21:40:21"
+    },
+    {
+        "id": 40,
+        "organization_id": 6,
+        "actor_user_id": 17,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 8,
+        "metadata": null,
+        "created_at": "2026-08-14 21:40:21"
+    },
+    {
+        "id": 41,
+        "organization_id": 6,
+        "actor_user_id": 17,
+        "event": "subscription_cancelled",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 8,
+        "metadata": null,
+        "created_at": "2026-08-14 21:44:49"
+    },
+    {
+        "id": 42,
+        "organization_id": 6,
+        "actor_user_id": 17,
+        "event": "seat_released",
+        "subject_type": "App\\Models\\SubscriptionSeat",
+        "subject_id": 3,
+        "metadata": null,
+        "created_at": "2026-08-14 21:44:49"
+    },
+    {
+        "id": 43,
+        "organization_id": 6,
+        "actor_user_id": 17,
+        "event": "access_revoked",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 8,
+        "metadata": null,
+        "created_at": "2026-08-14 21:44:49"
+    },
+    {
+        "id": 44,
+        "organization_id": 6,
+        "actor_user_id": 17,
+        "event": "organization_archived",
+        "subject_type": "App\\Models\\Organization",
+        "subject_id": 6,
+        "metadata": null,
+        "created_at": "2026-08-14 21:44:49"
+    },
+    {
+        "id": 45,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 9,
+        "metadata": null,
+        "created_at": "2026-09-03 07:44:24"
+    },
+    {
+        "id": 46,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 9,
+        "metadata": null,
+        "created_at": "2026-09-03 07:44:24"
+    },
+    {
+        "id": 47,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "seat_assigned",
+        "subject_type": "App\\Models\\SubscriptionSeat",
+        "subject_id": 4,
+        "metadata": null,
+        "created_at": "2026-09-03 07:44:24"
+    },
+    {
+        "id": 48,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 9,
+        "metadata": null,
+        "created_at": "2026-09-03 07:44:24"
+    },
+    {
+        "id": 49,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"title\": \"قضية تجريبية للعرض (Demo)\"}",
+        "created_at": "2026-09-03 07:44:24"
+    },
+    {
+        "id": 50,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_party_added",
+        "subject_type": "App\\Models\\CaseParty",
+        "subject_id": 1,
+        "metadata": "{\"name\": \"منشأة تجريبية (Demo)\", \"case_id\": 1}",
+        "created_at": "2026-09-03 07:44:24"
+    },
+    {
+        "id": 51,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_procedure_added",
+        "subject_type": "App\\Models\\CaseProcedure",
+        "subject_id": 1,
+        "metadata": "{\"title\": \"إخطار الدائنين (Demo)\", \"case_id\": 1}",
+        "created_at": "2026-09-03 07:44:24"
+    },
+    {
+        "id": 52,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_note_added",
+        "subject_type": "App\\Models\\CaseNote",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 07:44:24"
+    },
+    {
+        "id": 53,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_creditor_added",
+        "subject_type": "App\\Models\\CaseCreditor",
+        "subject_id": 1,
+        "metadata": "{\"name\": \"دائن حقيقي عبر المتصفح\", \"amount\": \"75000.00\", \"case_id\": 1}",
+        "created_at": "2026-09-03 09:40:31"
+    },
+    {
+        "id": 54,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 09:40:31"
+    },
+    {
+        "id": 55,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 10,
+        "metadata": null,
+        "created_at": "2026-09-03 09:52:28"
+    },
+    {
+        "id": 56,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 10,
+        "metadata": null,
+        "created_at": "2026-09-03 09:52:28"
+    },
+    {
+        "id": 57,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 10,
+        "metadata": null,
+        "created_at": "2026-09-03 09:52:28"
+    },
+    {
+        "id": 58,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 2,
+        "metadata": "{\"title\": \"الفارس\"}",
+        "created_at": "2026-09-03 09:52:40"
+    },
+    {
+        "id": 59,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 2,
+        "metadata": "{\"case_id\": 2}",
+        "created_at": "2026-09-03 09:52:50"
+    },
+    {
+        "id": 60,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 2,
+        "metadata": "{\"case_id\": 2}",
+        "created_at": "2026-09-03 09:52:53"
+    },
+    {
+        "id": 61,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 2,
+        "metadata": "{\"case_id\": 2}",
+        "created_at": "2026-09-03 09:53:15"
+    },
+    {
+        "id": 62,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_client_invited",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1, \"client_email\": \"demo-eflas-client@example.test\"}",
+        "created_at": "2026-09-03 11:01:08"
+    },
+    {
+        "id": 63,
+        "organization_id": 7,
+        "actor_user_id": 20,
+        "event": "case_document_uploaded",
+        "subject_type": "App\\Models\\CaseDocument",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1, \"filename\": \"مستند.pdf\"}",
+        "created_at": "2026-09-03 11:02:54"
+    },
+    {
+        "id": 64,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 12:05:07"
+    },
+    {
+        "id": 65,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 12:06:16"
+    },
+    {
+        "id": 66,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 12:07:03"
+    },
+    {
+        "id": 67,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 12:07:48"
+    },
+    {
+        "id": 68,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 12:08:25"
+    },
+    {
+        "id": 69,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 12:09:45"
+    },
+    {
+        "id": 70,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 12:10:26"
+    },
+    {
+        "id": 71,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 12:11:09"
+    },
+    {
+        "id": 72,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"case_id\": 1}",
+        "created_at": "2026-09-03 12:11:39"
+    },
+    {
+        "id": 73,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 1,
+        "metadata": "{\"role\": \"lawyer\", \"case_id\": 1}",
+        "created_at": "2026-09-03 12:11:41"
+    },
+    {
+        "id": 74,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 3,
+        "metadata": "{\"title\": \"اختبار\"}",
+        "created_at": "2026-09-03 12:15:02"
+    },
+    {
+        "id": 75,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 3,
+        "metadata": "{\"role\": \"lawyer\", \"case_id\": 3}",
+        "created_at": "2026-09-03 12:15:22"
+    },
+    {
+        "id": 76,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_timeline_event_toggled",
+        "subject_type": "App\\Models\\CaseTimelineEvent",
+        "subject_id": 9,
+        "metadata": "{\"done\": true, \"label\": \"تقديم الطلب لقيد الدعاوى\", \"case_id\": 3}",
+        "created_at": "2026-09-03 12:16:36"
+    },
+    {
+        "id": 77,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 4,
+        "metadata": "{\"title\": \"اختبار\"}",
+        "created_at": "2026-09-03 13:03:49"
+    },
+    {
+        "id": 78,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 4,
+        "metadata": "{\"case_id\": 4}",
+        "created_at": "2026-09-03 13:03:54"
+    },
+    {
+        "id": 79,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 4,
+        "metadata": "{\"case_id\": 4}",
+        "created_at": "2026-09-03 13:39:25"
+    },
+    {
+        "id": 80,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 4,
+        "metadata": "{\"role\": \"lawyer\", \"case_id\": 4}",
+        "created_at": "2026-09-03 13:41:42"
+    },
+    {
+        "id": 81,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 5,
+        "metadata": "{\"title\": \"قضية اختبار الإصلاحات\"}",
+        "created_at": "2026-09-03 14:35:32"
+    },
+    {
+        "id": 82,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 5,
+        "metadata": "{\"case_id\": 5}",
+        "created_at": "2026-09-03 14:35:33"
+    },
+    {
+        "id": 83,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_creditor_added",
+        "subject_type": "App\\Models\\CaseCreditor",
+        "subject_id": 2,
+        "metadata": "{\"name\": \"دائن حقيقي\", \"amount\": \"5000.00\", \"case_id\": 5}",
+        "created_at": "2026-09-03 14:35:34"
+    },
+    {
+        "id": 84,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_deleted",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 5,
+        "metadata": "{\"title\": \"قضية اختبار الإصلاحات\", \"case_id\": 5}",
+        "created_at": "2026-09-03 14:35:34"
+    },
+    {
+        "id": 85,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 8,
+        "metadata": "{\"title\": \"تست\"}",
+        "created_at": "2026-09-03 14:38:53"
+    },
+    {
+        "id": 86,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 8,
+        "metadata": "{\"case_id\": 8}",
+        "created_at": "2026-09-03 14:39:26"
+    },
+    {
+        "id": 87,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 8,
+        "metadata": "{\"case_id\": 8}",
+        "created_at": "2026-09-03 14:39:30"
+    },
+    {
+        "id": 88,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 8,
+        "metadata": "{\"case_id\": 8}",
+        "created_at": "2026-09-03 14:39:55"
+    },
+    {
+        "id": 89,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 9,
+        "metadata": "{\"title\": \"قضية تدقيق التجربة الكاملة\"}",
+        "created_at": "2026-09-03 14:46:55"
+    },
+    {
+        "id": 90,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 11,
+        "metadata": "{\"title\": \"قضية تدقيق التجربة الكاملة\"}",
+        "created_at": "2026-09-03 14:56:25"
+    },
+    {
+        "id": 91,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 12,
+        "metadata": "{\"title\": \"قضية تدقيق التجربة الكاملة\"}",
+        "created_at": "2026-09-03 14:58:41"
+    },
+    {
+        "id": 92,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_deleted",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 9,
+        "metadata": "{\"title\": \"قضية تدقيق التجربة الكاملة\", \"case_id\": 9}",
+        "created_at": "2026-09-03 14:59:38"
+    },
+    {
+        "id": 93,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_deleted",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 11,
+        "metadata": "{\"title\": \"قضية تدقيق التجربة الكاملة\", \"case_id\": 11}",
+        "created_at": "2026-09-03 14:59:38"
+    },
+    {
+        "id": 94,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_deleted",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 12,
+        "metadata": "{\"title\": \"قضية تدقيق التجربة الكاملة\", \"case_id\": 12}",
+        "created_at": "2026-09-03 14:59:38"
+    },
+    {
+        "id": 95,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 13,
+        "metadata": "{\"title\": \"اختبلار\"}",
+        "created_at": "2026-09-03 15:02:00"
+    },
+    {
+        "id": 96,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 13,
+        "metadata": "{\"case_id\": 13}",
+        "created_at": "2026-09-03 15:02:17"
+    },
+    {
+        "id": 97,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 13,
+        "metadata": "{\"case_id\": 13}",
+        "created_at": "2026-09-03 15:02:48"
+    },
+    {
+        "id": 98,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 13,
+        "metadata": "{\"case_id\": 13}",
+        "created_at": "2026-09-03 15:03:17"
+    },
+    {
+        "id": 99,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 13,
+        "metadata": "{\"role\": \"lawyer\", \"case_id\": 13}",
+        "created_at": "2026-09-03 15:03:50"
+    },
+    {
+        "id": 100,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 13,
+        "metadata": "{\"role\": \"representative\", \"case_id\": 13}",
+        "created_at": "2026-09-03 15:03:55"
+    },
+    {
+        "id": 101,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 15,
+        "metadata": "{\"title\": \"قضية تدقيق التجربة الكاملة\"}",
+        "created_at": "2026-09-03 15:11:17"
+    },
+    {
+        "id": 102,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 16,
+        "metadata": "{\"title\": \"قضية فحص شريط الاكتمال\"}",
+        "created_at": "2026-09-03 15:13:48"
+    },
+    {
+        "id": 103,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_profile_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 16,
+        "metadata": "{\"case_id\": 16}",
+        "created_at": "2026-09-03 15:13:49"
+    },
+    {
+        "id": 104,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_creditor_added",
+        "subject_type": "App\\Models\\CaseCreditor",
+        "subject_id": 3,
+        "metadata": "{\"name\": \"دائن الفحص\", \"amount\": \"10000.00\", \"case_id\": 16}",
+        "created_at": "2026-09-03 15:13:50"
+    },
+    {
+        "id": 105,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 16,
+        "metadata": "{\"case_id\": 16}",
+        "created_at": "2026-09-03 15:13:51"
+    },
+    {
+        "id": 106,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_deleted",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 16,
+        "metadata": "{\"title\": \"قضية فحص شريط الاكتمال\", \"case_id\": 16}",
+        "created_at": "2026-09-03 15:13:52"
+    },
+    {
+        "id": 107,
+        "organization_id": 7,
+        "actor_user_id": 19,
+        "event": "case_deleted",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 15,
+        "metadata": "{\"title\": \"قضية تدقيق التجربة الكاملة\", \"case_id\": 15}",
+        "created_at": "2026-09-03 15:28:28"
+    },
+    {
+        "id": 108,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 17,
+        "metadata": "{\"title\": \"هيكلة\"}",
+        "created_at": "2026-09-03 15:29:35"
+    },
+    {
+        "id": 109,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 17,
+        "metadata": "{\"case_id\": 17}",
+        "created_at": "2026-09-03 15:30:03"
+    },
+    {
+        "id": 110,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 18,
+        "metadata": "{\"title\": \"تتتت\"}",
+        "created_at": "2026-09-03 18:26:28"
+    },
+    {
+        "id": 111,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_wizard_answers_updated",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 18,
+        "metadata": "{\"case_id\": 18}",
+        "created_at": "2026-09-03 18:27:27"
+    },
+    {
+        "id": 112,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 18,
+        "metadata": "{\"role\": \"lawyer\", \"case_id\": 18}",
+        "created_at": "2026-09-03 18:27:39"
+    },
+    {
+        "id": 113,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 18,
+        "metadata": "{\"role\": \"representative\", \"case_id\": 18}",
+        "created_at": "2026-09-03 18:27:42"
+    },
+    {
+        "id": 114,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 11,
+        "metadata": null,
+        "created_at": "2026-09-03 18:47:27"
+    },
+    {
+        "id": 115,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 11,
+        "metadata": null,
+        "created_at": "2026-09-03 18:47:27"
+    },
+    {
+        "id": 116,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 11,
+        "metadata": null,
+        "created_at": "2026-09-03 18:47:27"
+    },
+    {
+        "id": 117,
+        "organization_id": null,
+        "actor_user_id": 22,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 12,
+        "metadata": null,
+        "created_at": "2026-09-08 10:09:20"
+    },
+    {
+        "id": 118,
+        "organization_id": null,
+        "actor_user_id": 22,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 12,
+        "metadata": null,
+        "created_at": "2026-09-08 10:09:20"
+    },
+    {
+        "id": 119,
+        "organization_id": null,
+        "actor_user_id": 22,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 12,
+        "metadata": null,
+        "created_at": "2026-09-08 10:09:20"
+    },
+    {
+        "id": 120,
+        "organization_id": null,
+        "actor_user_id": 22,
+        "event": "article_author_requested",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 1,
+        "metadata": "{\"user_id\": 22}",
+        "created_at": "2026-09-08 10:09:43"
+    },
+    {
+        "id": 121,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_author_approved",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 1,
+        "metadata": "{\"user_id\": 22}",
+        "created_at": "2026-09-08 10:09:44"
+    },
+    {
+        "id": 122,
+        "organization_id": null,
+        "actor_user_id": 22,
+        "event": "article_created",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 1,
+        "metadata": "{\"title\": \"مقدمة في نظام الإفلاس السعودي\"}",
+        "created_at": "2026-09-08 10:09:58"
+    },
+    {
+        "id": 123,
+        "organization_id": null,
+        "actor_user_id": 22,
+        "event": "article_submitted_for_review",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 1,
+        "metadata": "{\"case\": \"manual_submit\"}",
+        "created_at": "2026-09-08 10:10:07"
+    },
+    {
+        "id": 124,
+        "organization_id": null,
+        "actor_user_id": 23,
+        "event": "article_author_requested",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 2,
+        "metadata": "{\"user_id\": 23}",
+        "created_at": "2026-09-08 10:20:29"
+    },
+    {
+        "id": 125,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_author_approved",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 2,
+        "metadata": "{\"user_id\": 23}",
+        "created_at": "2026-09-08 10:20:50"
+    },
+    {
+        "id": 126,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_published",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 1,
+        "metadata": "{\"title\": \"مقدمة في نظام الإفلاس السعودي\"}",
+        "created_at": "2026-09-08 10:20:52"
+    },
+    {
+        "id": 127,
+        "organization_id": null,
+        "actor_user_id": 24,
+        "event": "article_author_requested",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 3,
+        "metadata": "{\"user_id\": 24}",
+        "created_at": "2026-09-08 10:23:33"
+    },
+    {
+        "id": 128,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_author_approved",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 3,
+        "metadata": "{\"user_id\": 24}",
+        "created_at": "2026-09-08 10:23:33"
+    },
+    {
+        "id": 129,
+        "organization_id": null,
+        "actor_user_id": 25,
+        "event": "article_author_requested",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 4,
+        "metadata": "{\"user_id\": 25}",
+        "created_at": "2026-09-08 10:23:33"
+    },
+    {
+        "id": 130,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_author_approved",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 4,
+        "metadata": "{\"user_id\": 25}",
+        "created_at": "2026-09-08 10:23:33"
+    },
+    {
+        "id": 131,
+        "organization_id": null,
+        "actor_user_id": 26,
+        "event": "article_author_requested",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 5,
+        "metadata": "{\"user_id\": 26}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 132,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_author_approved",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 5,
+        "metadata": "{\"user_id\": 26}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 133,
+        "organization_id": null,
+        "actor_user_id": 24,
+        "event": "article_created",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 2,
+        "metadata": "{\"title\": \"الفرق بين التصفية وإعادة الهيكلة في نظام الإفلاس السعودي\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 134,
+        "organization_id": null,
+        "actor_user_id": 24,
+        "event": "article_submitted_for_review",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 2,
+        "metadata": "{\"case\": \"manual_submit\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 135,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_published",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 2,
+        "metadata": "{\"title\": \"الفرق بين التصفية وإعادة الهيكلة في نظام الإفلاس السعودي\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 136,
+        "organization_id": null,
+        "actor_user_id": 24,
+        "event": "article_created",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 3,
+        "metadata": "{\"title\": \"الالتزامات التعاقدية عند تأخر الطرف الآخر في التنفيذ\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 137,
+        "organization_id": null,
+        "actor_user_id": 24,
+        "event": "article_submitted_for_review",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 3,
+        "metadata": "{\"case\": \"manual_submit\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 138,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_published",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 3,
+        "metadata": "{\"title\": \"الالتزامات التعاقدية عند تأخر الطرف الآخر في التنفيذ\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 139,
+        "organization_id": null,
+        "actor_user_id": 25,
+        "event": "article_created",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 4,
+        "metadata": "{\"title\": \"أساسيات التخطيط المالي للمنشآت الصغيرة قبل التوسع\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 140,
+        "organization_id": null,
+        "actor_user_id": 25,
+        "event": "article_submitted_for_review",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 4,
+        "metadata": "{\"case\": \"manual_submit\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 141,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_published",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 4,
+        "metadata": "{\"title\": \"أساسيات التخطيط المالي للمنشآت الصغيرة قبل التوسع\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 142,
+        "organization_id": null,
+        "actor_user_id": 25,
+        "event": "article_created",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 5,
+        "metadata": "{\"title\": \"كيف تقرأ القوائم المالية قبل اتخاذ قرار استثماري\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 143,
+        "organization_id": null,
+        "actor_user_id": 25,
+        "event": "article_submitted_for_review",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 5,
+        "metadata": "{\"case\": \"manual_submit\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 144,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_published",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 5,
+        "metadata": "{\"title\": \"كيف تقرأ القوائم المالية قبل اتخاذ قرار استثماري\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 145,
+        "organization_id": null,
+        "actor_user_id": 26,
+        "event": "article_created",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 6,
+        "metadata": "{\"title\": \"الامتثال الضريبي: أبرز الأخطاء الشائعة لدى المنشآت الناشئة\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 146,
+        "organization_id": null,
+        "actor_user_id": 26,
+        "event": "article_submitted_for_review",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 6,
+        "metadata": "{\"case\": \"manual_submit\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 147,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_published",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 6,
+        "metadata": "{\"title\": \"الامتثال الضريبي: أبرز الأخطاء الشائعة لدى المنشآت الناشئة\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 148,
+        "organization_id": null,
+        "actor_user_id": 26,
+        "event": "article_created",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 7,
+        "metadata": "{\"title\": \"متى تحتاج منشأتك إلى مراجع حسابات خارجي؟\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 149,
+        "organization_id": null,
+        "actor_user_id": 26,
+        "event": "article_submitted_for_review",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 7,
+        "metadata": "{\"case\": \"manual_submit\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 150,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_published",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 7,
+        "metadata": "{\"title\": \"متى تحتاج منشأتك إلى مراجع حسابات خارجي؟\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 151,
+        "organization_id": null,
+        "actor_user_id": 24,
+        "event": "article_created",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 8,
+        "metadata": "{\"title\": \"دليل مختصر لفهم منظومة العدالة الرقمية في المملكة\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 152,
+        "organization_id": null,
+        "actor_user_id": 24,
+        "event": "article_submitted_for_review",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 8,
+        "metadata": "{\"case\": \"manual_submit\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 153,
+        "organization_id": null,
+        "actor_user_id": 21,
+        "event": "article_published",
+        "subject_type": "App\\Models\\Article",
+        "subject_id": 8,
+        "metadata": "{\"title\": \"دليل مختصر لفهم منظومة العدالة الرقمية في المملكة\"}",
+        "created_at": "2026-09-08 10:23:34"
+    },
+    {
+        "id": 154,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 13,
+        "metadata": null,
+        "created_at": "2026-09-08 10:49:56"
+    },
+    {
+        "id": 155,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 13,
+        "metadata": null,
+        "created_at": "2026-09-08 10:49:56"
+    },
+    {
+        "id": 156,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 13,
+        "metadata": null,
+        "created_at": "2026-09-08 10:49:56"
+    },
+    {
+        "id": 157,
+        "organization_id": null,
+        "actor_user_id": 28,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 14,
+        "metadata": null,
+        "created_at": "2026-09-08 10:50:25"
+    },
+    {
+        "id": 158,
+        "organization_id": null,
+        "actor_user_id": 28,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 14,
+        "metadata": null,
+        "created_at": "2026-09-08 10:50:25"
+    },
+    {
+        "id": 159,
+        "organization_id": null,
+        "actor_user_id": 28,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 14,
+        "metadata": null,
+        "created_at": "2026-09-08 10:50:25"
+    },
+    {
+        "id": 160,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "service_listing_created",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 1,
+        "metadata": "{\"title\": \"استشارات تأسيس شركات (تحقق حي)\"}",
+        "created_at": "2026-09-08 10:50:37"
+    },
+    {
+        "id": 161,
+        "organization_id": null,
+        "actor_user_id": 28,
+        "event": "service_listing_interest_expressed",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 1,
+        "metadata": "{\"listing_id\": 1}",
+        "created_at": "2026-09-08 10:50:40"
+    },
+    {
+        "id": 162,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "service_listing_closed",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 1,
+        "metadata": "{\"title\": \"استشارات تأسيس شركات (تحقق حي)\"}",
+        "created_at": "2026-09-08 10:50:40"
+    },
+    {
+        "id": 163,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "service_listing_created",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 1,
+        "metadata": "{\"title\": \"استشارات تأسيس الشركات الناشئة\"}",
+        "created_at": "2026-09-08 11:05:50"
+    },
+    {
+        "id": 164,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 15,
+        "metadata": null,
+        "created_at": "2026-09-08 11:07:43"
+    },
+    {
+        "id": 165,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 15,
+        "metadata": null,
+        "created_at": "2026-09-08 11:07:43"
+    },
+    {
+        "id": 166,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 15,
+        "metadata": null,
+        "created_at": "2026-09-08 11:07:43"
+    },
+    {
+        "id": 167,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "service_listing_created",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 2,
+        "metadata": "{\"title\": \"تشيسم؛دزعش\"}",
+        "created_at": "2026-09-08 11:10:59"
+    },
+    {
+        "id": 168,
+        "organization_id": null,
+        "actor_user_id": 29,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 16,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:16"
+    },
+    {
+        "id": 169,
+        "organization_id": null,
+        "actor_user_id": 29,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 16,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:16"
+    },
+    {
+        "id": 170,
+        "organization_id": null,
+        "actor_user_id": 29,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 16,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:16"
+    },
+    {
+        "id": 171,
+        "organization_id": null,
+        "actor_user_id": 30,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 17,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:16"
+    },
+    {
+        "id": 172,
+        "organization_id": null,
+        "actor_user_id": 30,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 17,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:16"
+    },
+    {
+        "id": 173,
+        "organization_id": null,
+        "actor_user_id": 30,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 17,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:16"
+    },
+    {
+        "id": 174,
+        "organization_id": null,
+        "actor_user_id": 30,
+        "event": "service_listing_created",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 3,
+        "metadata": "{\"title\": \"تمثيل قانوني بقضايا العمل والعمال\"}",
+        "created_at": "2026-09-08 11:13:16"
+    },
+    {
+        "id": 175,
+        "organization_id": null,
+        "actor_user_id": 31,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 18,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 176,
+        "organization_id": null,
+        "actor_user_id": 31,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 18,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 177,
+        "organization_id": null,
+        "actor_user_id": 31,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 18,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 178,
+        "organization_id": null,
+        "actor_user_id": 31,
+        "event": "service_listing_created",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 4,
+        "metadata": "{\"title\": \"استشارات تمويل وإعادة هيكلة الديون\"}",
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 179,
+        "organization_id": null,
+        "actor_user_id": 32,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 19,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 180,
+        "organization_id": null,
+        "actor_user_id": 32,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 19,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 181,
+        "organization_id": null,
+        "actor_user_id": 32,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 19,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 182,
+        "organization_id": null,
+        "actor_user_id": 32,
+        "event": "service_listing_created",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 5,
+        "metadata": "{\"title\": \"إعداد ومراجعة الإقرارات الضريبية (VAT & Zakat)\"}",
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 183,
+        "organization_id": null,
+        "actor_user_id": 33,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 20,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 184,
+        "organization_id": null,
+        "actor_user_id": 33,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 20,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 185,
+        "organization_id": null,
+        "actor_user_id": 33,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 20,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 186,
+        "organization_id": null,
+        "actor_user_id": 33,
+        "event": "service_listing_created",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 6,
+        "metadata": "{\"title\": \"مراجعة حسابات خارجية معتمدة\"}",
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 187,
+        "organization_id": null,
+        "actor_user_id": 34,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 21,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 188,
+        "organization_id": null,
+        "actor_user_id": 34,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 21,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 189,
+        "organization_id": null,
+        "actor_user_id": 34,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 21,
+        "metadata": null,
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 190,
+        "organization_id": null,
+        "actor_user_id": 34,
+        "event": "service_listing_created",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 7,
+        "metadata": "{\"title\": \"استشارات تراخيص تجارية وامتثال نظامي\"}",
+        "created_at": "2026-09-08 11:13:17"
+    },
+    {
+        "id": 191,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 22,
+        "metadata": null,
+        "created_at": "2026-09-08 11:54:45"
+    },
+    {
+        "id": 192,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 22,
+        "metadata": null,
+        "created_at": "2026-09-08 11:54:45"
+    },
+    {
+        "id": 193,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 22,
+        "metadata": null,
+        "created_at": "2026-09-08 11:54:45"
+    },
+    {
+        "id": 194,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 23,
+        "metadata": null,
+        "created_at": "2026-09-08 11:56:33"
+    },
+    {
+        "id": 195,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 23,
+        "metadata": null,
+        "created_at": "2026-09-08 11:56:33"
+    },
+    {
+        "id": 196,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 23,
+        "metadata": null,
+        "created_at": "2026-09-08 11:56:33"
+    },
+    {
+        "id": 197,
+        "organization_id": null,
+        "actor_user_id": 35,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 24,
+        "metadata": null,
+        "created_at": "2026-09-08 12:12:46"
+    },
+    {
+        "id": 198,
+        "organization_id": null,
+        "actor_user_id": 35,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 24,
+        "metadata": null,
+        "created_at": "2026-09-08 12:12:46"
+    },
+    {
+        "id": 199,
+        "organization_id": null,
+        "actor_user_id": 35,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 24,
+        "metadata": null,
+        "created_at": "2026-09-08 12:12:46"
+    },
+    {
+        "id": 200,
+        "organization_id": null,
+        "actor_user_id": 35,
+        "event": "training_opportunity_created",
+        "subject_type": "App\\Models\\TrainingOpportunity",
+        "subject_id": 1,
+        "metadata": "{\"title\": \"تدريب تعاوني بقسم الاستشارات القانونية\"}",
+        "created_at": "2026-09-08 12:12:47"
+    },
+    {
+        "id": 201,
+        "organization_id": null,
+        "actor_user_id": 36,
+        "event": "training_application_submitted",
+        "subject_type": "App\\Models\\TrainingOpportunity",
+        "subject_id": 1,
+        "metadata": "{\"applicant_id\": 36}",
+        "created_at": "2026-09-08 12:13:06"
+    },
+    {
+        "id": 202,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 25,
+        "metadata": null,
+        "created_at": "2026-09-08 12:14:58"
+    },
+    {
+        "id": 203,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 25,
+        "metadata": null,
+        "created_at": "2026-09-08 12:14:58"
+    },
+    {
+        "id": 204,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 25,
+        "metadata": null,
+        "created_at": "2026-09-08 12:14:58"
+    },
+    {
+        "id": 205,
+        "organization_id": null,
+        "actor_user_id": 37,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 26,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:38"
+    },
+    {
+        "id": 206,
+        "organization_id": null,
+        "actor_user_id": 37,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 26,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:38"
+    },
+    {
+        "id": 207,
+        "organization_id": null,
+        "actor_user_id": 37,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 26,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:38"
+    },
+    {
+        "id": 208,
+        "organization_id": null,
+        "actor_user_id": 38,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 27,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 209,
+        "organization_id": null,
+        "actor_user_id": 38,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 27,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 210,
+        "organization_id": null,
+        "actor_user_id": 38,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 27,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 211,
+        "organization_id": null,
+        "actor_user_id": 38,
+        "event": "training_opportunity_created",
+        "subject_type": "App\\Models\\TrainingOpportunity",
+        "subject_id": 2,
+        "metadata": "{\"title\": \"تدريب تعاوني — قانون الشركات والعقود\"}",
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 212,
+        "organization_id": null,
+        "actor_user_id": 39,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 28,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 213,
+        "organization_id": null,
+        "actor_user_id": 39,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 28,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 214,
+        "organization_id": null,
+        "actor_user_id": 39,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 28,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 215,
+        "organization_id": null,
+        "actor_user_id": 39,
+        "event": "training_opportunity_created",
+        "subject_type": "App\\Models\\TrainingOpportunity",
+        "subject_id": 3,
+        "metadata": "{\"title\": \"تدريب تعاوني بقسم التحليل المالي\"}",
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 216,
+        "organization_id": null,
+        "actor_user_id": 40,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 29,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 217,
+        "organization_id": null,
+        "actor_user_id": 40,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 29,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 218,
+        "organization_id": null,
+        "actor_user_id": 40,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 29,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 219,
+        "organization_id": null,
+        "actor_user_id": 40,
+        "event": "training_opportunity_created",
+        "subject_type": "App\\Models\\TrainingOpportunity",
+        "subject_id": 4,
+        "metadata": "{\"title\": \"تدريب تعاوني — محاسبة ومراجعة\"}",
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 220,
+        "organization_id": null,
+        "actor_user_id": 41,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 30,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 221,
+        "organization_id": null,
+        "actor_user_id": 41,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 30,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 222,
+        "organization_id": null,
+        "actor_user_id": 41,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 30,
+        "metadata": null,
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 223,
+        "organization_id": null,
+        "actor_user_id": 41,
+        "event": "training_opportunity_created",
+        "subject_type": "App\\Models\\TrainingOpportunity",
+        "subject_id": 5,
+        "metadata": "{\"title\": \"تدريب تعاوني — إدارة أعمال وريادة\"}",
+        "created_at": "2026-09-08 12:25:39"
+    },
+    {
+        "id": 224,
+        "organization_id": null,
+        "actor_user_id": 36,
+        "event": "training_application_submitted",
+        "subject_type": "App\\Models\\TrainingOpportunity",
+        "subject_id": 2,
+        "metadata": "{\"applicant_id\": 36}",
+        "created_at": "2026-09-08 12:26:07"
+    },
+    {
+        "id": 225,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "training_opportunity_created",
+        "subject_type": "App\\Models\\TrainingOpportunity",
+        "subject_id": 6,
+        "metadata": "{\"title\": \"تدريب مشاكل التأمين\"}",
+        "created_at": "2026-09-08 13:15:31"
+    },
+    {
+        "id": 226,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 31,
+        "metadata": null,
+        "created_at": "2026-09-08 13:21:12"
+    },
+    {
+        "id": 227,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 31,
+        "metadata": null,
+        "created_at": "2026-09-08 13:21:12"
+    },
+    {
+        "id": 228,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 31,
+        "metadata": null,
+        "created_at": "2026-09-08 13:21:12"
+    },
+    {
+        "id": 229,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 19,
+        "metadata": "{\"title\": \"الامجد\"}",
+        "created_at": "2026-09-08 13:27:41"
+    },
+    {
+        "id": 230,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 20,
+        "metadata": "{\"title\": \"تتيت\"}",
+        "created_at": "2026-09-08 13:28:19"
+    },
+    {
+        "id": 231,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 32,
+        "metadata": null,
+        "created_at": "2026-09-08 13:30:21"
+    },
+    {
+        "id": 232,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 32,
+        "metadata": null,
+        "created_at": "2026-09-08 13:30:21"
+    },
+    {
+        "id": 233,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 32,
+        "metadata": null,
+        "created_at": "2026-09-08 13:30:21"
+    },
+    {
+        "id": 234,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 33,
+        "metadata": null,
+        "created_at": "2026-09-08 13:30:21"
+    },
+    {
+        "id": 235,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 33,
+        "metadata": null,
+        "created_at": "2026-09-08 13:30:21"
+    },
+    {
+        "id": 236,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 33,
+        "metadata": null,
+        "created_at": "2026-09-08 13:30:21"
+    },
+    {
+        "id": 237,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 21,
+        "metadata": "{\"title\": \"قضية تجريبية للتحقق من المسودة الذكية\"}",
+        "created_at": "2026-09-08 13:30:21"
+    },
+    {
+        "id": 238,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "case_creditor_added",
+        "subject_type": "App\\Models\\CaseCreditor",
+        "subject_id": 4,
+        "metadata": "{\"name\": \"بنك الرياض\", \"amount\": \"500000.00\", \"case_id\": 21}",
+        "created_at": "2026-09-08 13:30:31"
+    },
+    {
+        "id": 239,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "case_asset_added",
+        "subject_type": "App\\Models\\CaseAsset",
+        "subject_id": 1,
+        "metadata": "{\"name\": \"مبنى تجاري\", \"value\": \"800000.00\", \"case_id\": 21}",
+        "created_at": "2026-09-08 13:30:31"
+    },
+    {
+        "id": 240,
+        "organization_id": null,
+        "actor_user_id": 42,
+        "event": "case_draft_generation_failed",
+        "subject_type": "App\\Models\\CaseDraftGeneration",
+        "subject_id": 1,
+        "metadata": "{\"bankruptcy_case_id\": 21}",
+        "created_at": "2026-09-08 13:31:17"
+    },
+    {
+        "id": 241,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 19,
+        "metadata": "{\"role\": \"lawyer\", \"case_id\": 19}",
+        "created_at": "2026-09-08 13:42:14"
+    },
+    {
+        "id": 242,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 34,
+        "metadata": null,
+        "created_at": "2026-09-10 12:39:09"
+    },
+    {
+        "id": 243,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 34,
+        "metadata": null,
+        "created_at": "2026-09-10 12:39:09"
+    },
+    {
+        "id": 244,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 34,
+        "metadata": null,
+        "created_at": "2026-09-10 12:39:09"
+    },
+    {
+        "id": 245,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 22,
+        "metadata": "{\"title\": \"test\"}",
+        "created_at": "2026-09-10 12:39:19"
+    },
+    {
+        "id": 246,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 22,
+        "metadata": "{\"role\": \"lawyer\", \"case_id\": 22}",
+        "created_at": "2026-09-10 12:40:31"
+    },
+    {
+        "id": 247,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 22,
+        "metadata": "{\"role\": \"representative\", \"case_id\": 22}",
+        "created_at": "2026-09-10 12:40:35"
+    },
+    {
+        "id": 248,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "subscription_created",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 35,
+        "metadata": null,
+        "created_at": "2026-09-10 12:43:47"
+    },
+    {
+        "id": 249,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "subscription_activated",
+        "subject_type": "App\\Models\\Subscription",
+        "subject_id": 35,
+        "metadata": null,
+        "created_at": "2026-09-10 12:43:47"
+    },
+    {
+        "id": 250,
+        "organization_id": null,
+        "actor_user_id": 27,
+        "event": "access_granted",
+        "subject_type": "App\\Models\\AccessAssignment",
+        "subject_id": 35,
+        "metadata": null,
+        "created_at": "2026-09-10 12:43:47"
+    },
+    {
+        "id": 251,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 17,
+        "metadata": "{\"role\": \"lawyer\", \"case_id\": 17}",
+        "created_at": "2026-09-10 16:18:16"
+    },
+    {
+        "id": 252,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 17,
+        "metadata": "{\"role\": \"representative\", \"case_id\": 17}",
+        "created_at": "2026-09-10 16:18:25"
+    },
+    {
+        "id": 253,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "service_listing_inquiry_submitted",
+        "subject_type": "App\\Models\\ServiceListing",
+        "subject_id": 7,
+        "metadata": "{\"inquirer_email\": \"demo-bankruptcy-tech-owner@example.test\"}",
+        "created_at": "2026-09-10 16:21:05"
+    },
+    {
+        "id": 254,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 20,
+        "metadata": "{\"role\": \"lawyer\", \"case_id\": 20}",
+        "created_at": "2026-10-03 17:49:27"
+    },
+    {
+        "id": 255,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_signature_saved",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 20,
+        "metadata": "{\"role\": \"representative\", \"case_id\": 20}",
+        "created_at": "2026-10-03 17:49:33"
+    },
+    {
+        "id": 256,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "case_created",
+        "subject_type": "App\\Models\\BankruptcyCase",
+        "subject_id": 23,
+        "metadata": "{\"title\": \"oshpvdjsjhbpo\"}",
+        "created_at": "2026-10-03 17:51:12"
+    },
+    {
+        "id": 257,
+        "organization_id": null,
+        "actor_user_id": 19,
+        "event": "article_author_requested",
+        "subject_type": "App\\Models\\ArticleAuthor",
+        "subject_id": 6,
+        "metadata": "{\"user_id\": 19}",
+        "created_at": "2026-10-03 17:54:37"
+    }
+]

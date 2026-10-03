@@ -15,7 +15,7 @@ return new class extends Migration
             $table->foreignId('tech_service_id')->constrained()->restrictOnDelete();
             $table->timestamps();
 
-            $table->unique(['tech_service_request_id', 'tech_service_id']);
+            $table->unique(['tech_service_request_id', 'tech_service_id'], 'techunique');
         });
     }
 

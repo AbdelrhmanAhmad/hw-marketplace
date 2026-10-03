@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "مكتب الرياض للمحاماة",
+        "type": "firm",
+        "status": "active",
+        "owner_id": 6,
+        "created_at": "2026-08-08 22:27:29",
+        "updated_at": "2026-08-08 22:27:29"
+    },
+    {
+        "id": 2,
+        "name": "مكتب جدة الاستشاري",
+        "type": "firm",
+        "status": "active",
+        "owner_id": 6,
+        "created_at": "2026-08-08 22:27:29",
+        "updated_at": "2026-08-08 22:27:29"
+    },
+    {
+        "id": 3,
+        "name": "مكتب الدمام للاستشارات المالية",
+        "type": "firm",
+        "status": "active",
+        "owner_id": 6,
+        "created_at": "2026-08-09 08:01:06",
+        "updated_at": "2026-08-09 08:01:06"
+    },
+    {
+        "id": 5,
+        "name": "Cascade Test Org",
+        "type": "individual",
+        "status": "active",
+        "owner_id": 16,
+        "created_at": "2026-08-12 13:41:54",
+        "updated_at": "2026-08-12 13:41:54"
+    },
+    {
+        "id": 6,
+        "name": "مؤسسة تحقق OL المؤقتة",
+        "type": "firm",
+        "status": "archived",
+        "owner_id": 17,
+        "created_at": "2026-08-14 21:40:21",
+        "updated_at": "2026-08-14 21:44:49"
+    },
+    {
+        "id": 7,
+        "name": "مكتب تجريبي لإفلاس تك (Demo)",
+        "type": "firm",
+        "status": "active",
+        "owner_id": 19,
+        "created_at": "2026-09-03 07:44:24",
+        "updated_at": "2026-09-03 07:44:24"
+    }
+]

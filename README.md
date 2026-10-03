@@ -10,7 +10,7 @@
 - Blade + Livewire 3 (تفاعلية بدون تعقيد SPA)
 - Tailwind CSS 3 مهيّأ بالكامل لاتجاه RTL وخط Tajawal العربي
 - Filament v3 كلوحة إدارة للمحتوى
-- SQLite للتطوير المحلي (بدون أي إعداد) → يمكن التحويل لـ MySQL في الإنتاج عبر متغيرات `.env` فقط
+- MySQL للتطوير المحلي (`hw_marketplace`) مع seeders Eloquent + fixtures JSON — راجع `docs/mysql-local-baseline.md`
 - `laravel-lang/lang` (تبعية تطوير فقط) استُخدمت لتوليد ترجمات عربية لواجهات المصادقة والتحقق (`lang/ar.json`, `lang/ar/*.php`)
 
 ## التشغيل محليًا
@@ -18,17 +18,18 @@
 ```bash
 composer install
 npm install && npm run build   # أو: npm run dev أثناء التطوير
+
+# تأكد من DB_* في .env (mysql / hw_marketplace) ثم:
 php artisan migrate:fresh --seed
-php artisan make:filament-user   # لإنشاء مستخدم لوحة الإدارة إن لم يكن موجودًا
+
 php artisan serve
 ```
 
 - الموقع العام: `http://localhost:8000`
 - لوحة الإدارة: `http://localhost:8000/admin`
+- تفاصيل قاعدة البيانات والـ seeders: `docs/mysql-local-baseline.md`
 
-بيانات الدخول الافتراضية للوحة الإدارة (تم إنشاؤها أثناء البناء، غيّرها فور النشر):
-- البريد: `admin@marefa.local`
-- كلمة المرور: `password123`
+بيانات الدخول التجريبية تُزرع عبر `UserSeeder` وباقي seeders الموديلات (غيّرها قبل أي نشر).
 
 ## ما هو مبني في هذه المرحلة
 

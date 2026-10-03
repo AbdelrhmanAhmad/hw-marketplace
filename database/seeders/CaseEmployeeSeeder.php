@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\ArticleCategory;
+use App\Models\CaseEmployee;
 use Database\Seeders\Concerns\SeedsFromJson;
 use Illuminate\Database\Seeder;
 
-class ArticleCategorySeeder extends Seeder
+class CaseEmployeeSeeder extends Seeder
 {
     use SeedsFromJson;
 
     public function run(): void
     {
-        $this->seedModelFromJson(ArticleCategory::class, 'article_categories.json');
+        $this->seedModelFromJson(CaseEmployee::class, 'bankruptcy_case_employees.json');
     }
 }

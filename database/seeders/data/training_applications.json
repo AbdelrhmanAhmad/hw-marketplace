@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "training_opportunity_id": 1,
+        "user_id": 36,
+        "message": "أنا طالبة سنة رابعة حقوق، متحمسة أتدرب معكم. تحقق حي عبر Playwright.",
+        "status": "submitted",
+        "created_at": "2026-09-08 12:13:06",
+        "updated_at": "2026-09-08 12:13:06"
+    },
+    {
+        "id": 2,
+        "training_opportunity_id": 2,
+        "user_id": 36,
+        "message": "متحمسة أتدرب معكم بقسم العقود، تحقق حي عبر Playwright.",
+        "status": "submitted",
+        "created_at": "2026-09-08 12:26:07",
+        "updated_at": "2026-09-08 12:26:07"
+    }
+]

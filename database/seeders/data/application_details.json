@@ -1,0 +1,177 @@
+[
+    {
+        "id": 1,
+        "marketplace_item_id": 1,
+        "entry_route": "marefa.home",
+        "created_at": "2026-08-08 14:27:07",
+        "updated_at": "2026-08-08 14:27:07"
+    },
+    {
+        "id": 2,
+        "marketplace_item_id": 2,
+        "entry_route": "bankruptcy-tech.cases.index",
+        "created_at": "2026-08-08 14:27:07",
+        "updated_at": "2026-09-02 13:50:08"
+    },
+    {
+        "id": 3,
+        "marketplace_item_id": 3,
+        "entry_route": "articles.index",
+        "created_at": "2026-08-08 14:27:07",
+        "updated_at": "2026-09-08 09:55:54"
+    },
+    {
+        "id": 4,
+        "marketplace_item_id": 4,
+        "entry_route": "community.index",
+        "created_at": "2026-08-08 14:27:07",
+        "updated_at": "2026-09-08 10:49:56"
+    },
+    {
+        "id": 5,
+        "marketplace_item_id": 5,
+        "entry_route": "tech-portal.index",
+        "created_at": "2026-08-08 14:27:07",
+        "updated_at": "2026-09-08 11:48:35"
+    },
+    {
+        "id": 6,
+        "marketplace_item_id": 6,
+        "entry_route": null,
+        "created_at": "2026-08-08 14:27:07",
+        "updated_at": "2026-08-08 14:27:07"
+    },
+    {
+        "id": 7,
+        "marketplace_item_id": 7,
+        "entry_route": "internships.index",
+        "created_at": "2026-08-08 14:27:07",
+        "updated_at": "2026-09-08 12:12:36"
+    },
+    {
+        "id": 8,
+        "marketplace_item_id": 8,
+        "entry_route": "bankruptcy-tech.cases.index",
+        "created_at": "2026-08-08 14:27:07",
+        "updated_at": "2026-09-08 13:29:10"
+    },
+    {
+        "id": 9,
+        "marketplace_item_id": 9,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 10,
+        "marketplace_item_id": 10,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 11,
+        "marketplace_item_id": 11,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 14,
+        "marketplace_item_id": 14,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 15,
+        "marketplace_item_id": 15,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 18,
+        "marketplace_item_id": 18,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 20,
+        "marketplace_item_id": 20,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 22,
+        "marketplace_item_id": 22,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 23,
+        "marketplace_item_id": 23,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 24,
+        "marketplace_item_id": 24,
+        "entry_route": null,
+        "created_at": "2026-09-13 11:38:16",
+        "updated_at": "2026-09-13 11:38:16"
+    },
+    {
+        "id": 25,
+        "marketplace_item_id": 25,
+        "entry_route": null,
+        "created_at": "2026-09-13 12:40:02",
+        "updated_at": "2026-09-13 12:40:02"
+    },
+    {
+        "id": 26,
+        "marketplace_item_id": 26,
+        "entry_route": null,
+        "created_at": "2026-09-13 12:40:02",
+        "updated_at": "2026-09-13 12:40:02"
+    },
+    {
+        "id": 27,
+        "marketplace_item_id": 27,
+        "entry_route": null,
+        "created_at": "2026-09-13 12:40:02",
+        "updated_at": "2026-09-13 12:40:02"
+    },
+    {
+        "id": 29,
+        "marketplace_item_id": 29,
+        "entry_route": null,
+        "created_at": "2026-09-13 12:40:02",
+        "updated_at": "2026-09-13 12:40:02"
+    },
+    {
+        "id": 30,
+        "marketplace_item_id": 30,
+        "entry_route": null,
+        "created_at": "2026-09-13 12:40:02",
+        "updated_at": "2026-09-13 12:40:02"
+    },
+    {
+        "id": 31,
+        "marketplace_item_id": 31,
+        "entry_route": null,
+        "created_at": "2026-09-13 12:40:02",
+        "updated_at": "2026-09-13 12:40:02"
+    },
+    {
+        "id": 32,
+        "marketplace_item_id": 32,
+        "entry_route": null,
+        "created_at": "2026-09-13 12:40:02",
+        "updated_at": "2026-09-13 12:40:02"
+    }
+]
